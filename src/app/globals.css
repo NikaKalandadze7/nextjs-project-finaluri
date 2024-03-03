@@ -2,32 +2,81 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+  .card-large {
+    @apply min-w-[135px] w-[calc(25%-20px)] rounded-[2px] xl:h-[458px]   overflow-hidden   ease-in-out duration-300 hover:scale-105;
+  }
+}
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+body {
+  background-color: white;
+}
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: black;
+}
+.hover-underline-animation:hover {
+  color: #ef4c53;
+}
+.hover-underline-animation::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ef4c53;
+
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.item {
+  height: 100%;
+  padding: 1rem;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.owl-nav {
+  position: absolute;
+  top: 30%;
+  width: 100%;
+}
+.owl-dots {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+}
+.owl-dot {
+  font-size: 52px;
+  color: black;
+}
+.owl-nav {
+  font-size: 52px;
+}
+.owl-next {
+  position: absolute;
+  right: 0;
+  z-index: 99;
+}
+.owl-prev {
+  position: absolute;
+  left: 0;
+  z-index: 99;
 }
