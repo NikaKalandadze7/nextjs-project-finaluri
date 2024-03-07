@@ -20,7 +20,7 @@ const ProductListSmall = () => {
   }, []);
   return (
     <div className="w-full">
-      <div className="mt-9  border-gray-300  border-t-[1px] p-6 m-6 overflow-hidden">
+      <div className="mt-9 border-gray-300  border-t-[1px] py-6 my-6 overflow-hidden">
         <h3 className="text-[#ef4c53] text-lg font-semibold">
           Check out more Products:
         </h3>

@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { LoggedInMenu, LoginIcon, SignUpIcon, UserIcon } from "@Components";
 import Link from "next/link";
 import { useIsLoggedInStore, useUserInfoStore } from "@/store";
+import { useTranslations } from "next-intl";
 
 const UserMenu = () => {
   const { loggedIn, initializeLoggedIn } = useIsLoggedInStore();
@@ -11,6 +12,7 @@ const UserMenu = () => {
     initializeLoggedIn();
     initializeUserInfo();
   }, []);
+  const t = useTranslations("User");
 
   return (
     <>
@@ -40,7 +42,7 @@ const UserMenu = () => {
                   className="flex flex-row items-center gap-3"
                 >
                   <LoginIcon color="white" height={18} width={18} />
-                  <span>Log in </span>
+                  <span>{t("logIn")} </span>
                 </Link>
               </li>
               <li>
@@ -49,7 +51,7 @@ const UserMenu = () => {
                   className="flex flex-row items-center gap-3"
                 >
                   <SignUpIcon color="white" height={18} width={18} />
-                  <span>Create Account</span>
+                  <span>{t("createAccount")}</span>
                 </Link>
               </li>
             </>

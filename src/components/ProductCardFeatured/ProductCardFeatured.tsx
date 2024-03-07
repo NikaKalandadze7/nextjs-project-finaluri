@@ -19,7 +19,7 @@ const ProductCardFeatured: React.FC<ProductInterface> = ({
 
   return (
     <div
-      className="min-w-[135px] w-[11vw] rounded-[2px] max-h-[340px]   overflow-hidden   ease-in-out duration-300 hover:scale-[1.02] bg-white text-black z-0"
+      className="min-w-[135px] w-[10% max-w-[267px] rounded-[2px] max-h-[340px]   overflow-hidden   ease-in-out duration-300 hover:scale-[1.02] bg-white text-black z-0"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -30,11 +30,11 @@ const ProductCardFeatured: React.FC<ProductInterface> = ({
         <div
           className={`${
             salePrice === null ? "hidden" : "absolute"
-          } bg-[#ef4c53] rounded-md md:top-2 md:left-2 xs:left-1 xs:top-1 px-3 py-1 text-white text-sm`}
+          } bg-[#ef4c53] rounded-md md:top-2 md:left-5 xs:left-1 xs:top-1 px-3 py-1 text-white text-sm`}
         >
           -{discountPercentage}%
         </div>
-        <div className="absolute md:right-2 md:top-2 xs:right-1 xs:top-1 ">
+        <div className="absolute  right-5  top-2 ">
           <FavoriteButton productId={id} />
         </div>
         <AddToCartButton isHovered={isHovered} id={id} />

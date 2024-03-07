@@ -25,6 +25,7 @@ export { default as ShippingAddress } from "./ShippingAddress/ShippingAddress";
 export { default as PaymentForm } from "./PaymentForm/PaymentForm";
 export { default as PurchaseDisplay } from "./PurchaseDisplay/PurchaseDisplay";
 export { default as PurchasedItems } from "./PurchasedItems/PurchasedItems";
+export { default as LocaleSwitcher } from "./LocaleSwitcher/LocaleSwitcher";
 
 export { default as Login } from "./Login/Login";
 export { default as SignUp } from "./SignUp/SignUp";

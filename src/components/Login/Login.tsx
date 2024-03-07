@@ -8,6 +8,7 @@ import {
   useUserInfoStore,
   useShoppingCartStore,
 } from "@/store";
+import { useTranslations } from "next-intl";
 
 const Login = () => {
   const [email, setEmail] = useState<string>("");
@@ -51,6 +52,7 @@ const Login = () => {
       console.error("Failed to fetch user info:", error);
     }
   };
+  const t = useTranslations("User");
 
   return (
     <div>
@@ -65,18 +67,18 @@ const Login = () => {
         ) : (
           <>
             <div className="text-black flex flex-col">
-              <h1 className="text-[36px] text-black">Log in to Exclusive</h1>
-              <span className="">Enter your details below</span>
+              <h1 className="text-[36px] text-black">{t("loginBanner")}</h1>
+              <span className="">{t("details")}</span>
             </div>
             <InputForm
               type="email"
-              label="Email"
+              label={t("email")}
               handleChange={(e) => setEmail(e)}
               maxLength={999}
             />
             <InputForm
               type="password"
-              label="Password"
+              label={t("password")}
               handleChange={(e) => setPassword(e)}
               maxLength={999}
             />
@@ -92,12 +94,12 @@ const Login = () => {
                 />
               </div>
               <MainButton
-                label={"Log In"}
+                label={t("logIn")}
                 size={"w-[50%]"}
                 buttonAction={() => onLogin()}
               />
               <Link href="/authenticate/signup" className="text-[#DB4444]">
-                Register instead
+                {t("register")}
               </Link>
             </div>
           </>

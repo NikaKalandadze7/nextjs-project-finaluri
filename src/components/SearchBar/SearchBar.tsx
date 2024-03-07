@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { MagnifyingGlassIcon, ProductSearchDisplay } from "..";
 import { ProductInterface, fetchedProductsInterface } from "@/types";
 import { productService } from "@/services";
+import { useTranslations } from "next-intl";
 
 const SearchBar = () => {
   const [focused, setFocused] = useState(false);
@@ -32,12 +33,12 @@ const SearchBar = () => {
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchText(event.target.value);
   };
-
+  const t = useTranslations("Search");
   return (
     <div className="relative flex items-center justify-center pl-2 h-9 rounded-sm drop-shadow-md w-60 z-[9999]">
       <input
         type="text"
-        placeholder="What are you looking for?"
+        placeholder={t("placeholder")}
         className="text-xs h-9 bg-[#f5f5f5] py-2 px-5 rounded-sm w-full z-[9999]"
         onChange={handleSearchChange}
         onFocus={() => setFocused(true)}
@@ -60,7 +61,7 @@ const SearchBar = () => {
             />
           ))
         ) : (
-          <p>No products found.</p>
+          <p className="px-4">{t("notFound")}</p>
         )}
       </div>
       <button className="absolute right-3 z-[9999]">

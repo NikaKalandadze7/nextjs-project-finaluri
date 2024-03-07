@@ -10,6 +10,8 @@ interface Month {
 const PaymentForm = () => {
   const [cardNumber, setCardNumber] = useState<string>("");
   const [nameOnCard, setNameOnCard] = useState<string>("");
+  const [cvv, setCvv] = useState<string>("");
+
   const [selectedMonth, setSelectedMonth] = useState("");
   const [selectedYear, setSelectedYear] = useState("");
   const [months, setMonths] = useState<Month[]>([]);
@@ -78,7 +80,7 @@ const PaymentForm = () => {
         />
         <div className="flex flex-row justify-between gap-5">
           <select
-            className="select select-error w-full mt-4 bg-white text-black"
+            className="select select-error w-full mt-6 bg-white text-black"
             value={selectedMonth}
             onChange={(e) => setSelectedMonth(e.target.value)}
           >
@@ -93,7 +95,7 @@ const PaymentForm = () => {
           </select>
 
           <select
-            className="select select-error w-full mt-4 bg-white text-black"
+            className="select select-error w-full mt-6 bg-white text-black"
             value={selectedYear}
             onChange={(e) => setSelectedYear(e.target.value)}
           >
@@ -106,6 +108,14 @@ const PaymentForm = () => {
               </option>
             ))}
           </select>
+          <LabeledInput
+            label="CVV"
+            disabled={false}
+            value={cvv}
+            maxLength={4}
+            type="number"
+            handleChange={(e) => setCvv(e)}
+          />
         </div>
 
         <div className="modal-action">

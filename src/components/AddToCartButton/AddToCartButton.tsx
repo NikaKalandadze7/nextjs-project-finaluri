@@ -2,14 +2,16 @@
 import React, { useEffect } from "react";
 import { addToCartService } from "@/services";
 import { useShoppingCartStore } from "@/store";
-
+import { useTranslations } from "next-intl";
 interface AddToCartButtonProps {
   isHovered: boolean;
   id: string;
+  label: string;
 }
 
 const AddToCartButton: React.FC<AddToCartButtonProps> = ({ isHovered, id }) => {
   const { fetchCartItems } = useShoppingCartStore();
+  const t = useTranslations("Product");
 
   const addToCart = async (productId: string) => {
     try {
@@ -26,7 +28,7 @@ const AddToCartButton: React.FC<AddToCartButtonProps> = ({ isHovered, id }) => {
       }`}
       onClick={() => addToCart(id)}
     >
-      Add To Cart
+      {t("addToCart")}
     </button>
   );
 };

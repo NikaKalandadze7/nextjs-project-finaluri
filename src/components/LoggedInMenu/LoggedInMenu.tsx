@@ -8,6 +8,7 @@ import {
 } from "@/store";
 import { LogOutIcon, ManageDataIcon, OrdersIcon, UserIcon } from "..";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 const LoggedInMenu = () => {
   const { setLoggedIn } = useIsLoggedInStore();
@@ -22,13 +23,14 @@ const LoggedInMenu = () => {
     clearCart();
     clearWishlist();
   };
+  const t = useTranslations("User");
 
   return (
     <>
       <li>
         <Link href={"/account"} className="flex flex-row items-center gap-3">
           <UserIcon color="white" height={18} width={18} />
-          <span>Manage My Account</span>
+          <span>{t("manageAccount")}</span>
         </Link>
       </li>
       <li>
@@ -37,13 +39,13 @@ const LoggedInMenu = () => {
           className="flex flex-row items-center gap-3"
         >
           <OrdersIcon color="white" height={18} width={18} />
-          <span>My Orders</span>
+          <span>{t("myOrders")}</span>
         </Link>
       </li>
       <li>
         <Link href={"/admin"} className="flex flex-row items-center gap-3">
           <ManageDataIcon color="white" height={18} width={18} />
-          <span>Manage Products</span>
+          <span>{t("manageProducts")}</span>
         </Link>
       </li>
       <li>
@@ -52,7 +54,7 @@ const LoggedInMenu = () => {
           onClick={() => handleLogOut()}
         >
           <LogOutIcon color="white" height={18} width={18} />
-          <span>Log Out</span>
+          <span>{t("logOut")}</span>
         </button>
       </li>
     </>

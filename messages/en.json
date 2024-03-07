@@ -1,0 +1,51 @@
+{
+  "Home": {
+    "featured": "Check out Discounted Products!"
+  },
+  "Navigation": {
+    "home": "Home",
+    "products": "Products",
+    "categories": "Categories",
+    "contact": "Contact"
+  },
+  "Product": {
+    "addToCart": "Add To Cart",
+    "browse": "Browse Products",
+    "filterBySale": "Filter products by SALE",
+    "onSale": "On Sale",
+    "filterByPrice": "Filter products by Price",
+    "filterByCategory": "Filter products by Category",
+    "chooseCategory": "Select Product Category",
+    "resultQuantity": "Products Per Page",
+    "quantity": "Result Quantity"
+  },
+  "ShoppingCart": {
+    "itemCount": "Item Count",
+    "totalPrice": "Total Price",
+    "proceed": "Proceed To Checkout",
+    "productName": "Product Name",
+    "quantity": "Quantity",
+    "price": "Price USD",
+    "remove": "Remove",
+    "cart": "Go to Cart"
+  },
+  "User": {
+    "createAccount": "Create Account",
+    "manageAccount": "Manage My Account",
+    "myOrders": "My Orders",
+    "manageProducts": "Manage Products",
+    "logOut": "Log Out",
+    "details": "Enter your details below",
+    "loginBanner": "Log in to Exclusive",
+    "logIn": "Log In",
+    "register": "Register instead",
+    "Error1": "Please fill in all Fields",
+    "Error2": "Incorrect email or password",
+    "email": "Email",
+    "password": "Password"
+  },
+  "Search": {
+    "placeholder": "What are you looking for?",
+    "notFound": "No products found."
+  }
+}

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { CartDropdownItemDisplay, ShoppingCartIcon } from "@Components";
 import { useShoppingCartStore } from "@/store";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 const ShoppingCart = () => {
   const { shoppingCart, fetchCartItems } = useShoppingCartStore();
@@ -17,7 +18,7 @@ const ShoppingCart = () => {
       0
     );
   };
-
+  const t = useTranslations("ShoppingCart");
   return (
     <div className="dropdown dropdown-end">
       <div tabIndex={0} role="button" className="relative">
@@ -36,12 +37,12 @@ const ShoppingCart = () => {
       >
         <div className="flex flex-row justify-between w-full p-1">
           <div className="flex flex-row gap-2">
-            <h5>Product name</h5>
+            <h5>{t("productName")}</h5>
           </div>
           <div className="flex flex-row gap-6">
-            <span>Quantity</span>
-            <span className="text-xs text-[#ef4c53] w-6">Price USD</span>
-            <span className="text-xs  w-9 m-1">Remove</span>
+            <span>{t("quantity")}</span>
+            <span className="text-xs text-[#ef4c53] w-6">{t("price")}</span>
+            <span className="text-xs  w-9 m-1">{t("remove")}</span>
           </div>
         </div>
         {shoppingCart.map((cartItem) => (
@@ -58,13 +59,13 @@ const ShoppingCart = () => {
         ))}
         <div className="flex flex-row justify-between">
           <Link href={"/cart"} className="btn btn-outline btn-error btn-sm">
-            Go to Cart
+            {t("cart")}
           </Link>
           <Link
             href={"/cart/checkout"}
             className="btn  btn-error btn-sm text-white"
           >
-            Proceed to Checkout
+            {t("proceed")}
           </Link>
         </div>
       </ul>

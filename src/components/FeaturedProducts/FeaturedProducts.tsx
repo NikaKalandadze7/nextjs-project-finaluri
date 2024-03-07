@@ -22,7 +22,7 @@ const FeaturedProducts = () => {
   }, []);
 
   return (
-    <div className="mt-10  flex w-full flex-row gap-5 overflow-hidden">
+    <div className="mt-10 flex w-full flex-row  overflow-hidden">
       <ProductSliderLarge items={products} />
     </div>
   );

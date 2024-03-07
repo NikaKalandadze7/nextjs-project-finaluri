@@ -1,9 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import ProductCardFeatured from "../ProductCardFeatured/ProductCardFeatured";
 import { categoriesService, productService } from "@Services";
 import { CategoriesInterface, ProductInterface } from "@/types";
-import ProductCardLarge from "../ProductCardLarge/ProductCardLarge";
+import { ProductCardLarge } from "@Components";
+import { useTranslations } from "next-intl";
+
 const FeaturedProducts = () => {
   const [products, setProducts] = useState<ProductInterface[]>([]);
   const [minPrice, setMinPrice] = useState<number | string>("0");
@@ -14,6 +15,7 @@ const FeaturedProducts = () => {
   const [categoryFilter, setCategoryFilter] = useState<string>("");
   const [categoryData, setCategoryData] = useState<CategoriesInterface[]>([]);
   const [totalPages, setTotalPages] = useState<number>(0);
+  const t = useTranslations("Product");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -51,10 +53,10 @@ const FeaturedProducts = () => {
   return (
     <div className="flex flex-col w-full">
       <div className="flex flex-col justify-between">
-        <h1 className="text-4xl text-black font-bold my-6">Browse Products</h1>
+        <h1 className="text-4xl text-black font-bold my-6">{t("browse")} </h1>
         <div className="flex flex-row gap-6">
           <div className="flex flex-col gap-1">
-            <h6 className="text-xs text-black">Filter products by SALE</h6>
+            <h6 className="text-xs text-black">{t("filterBySale")} </h6>
             <div className="form-control flex flex-row items-center gap-1">
               <label className="cursor-pointer label ">
                 <input
@@ -64,11 +66,11 @@ const FeaturedProducts = () => {
                   className="checkbox checkbox-error checkbox-sm"
                 />
               </label>
-              <span className="label-text text-black">On Sale</span>
+              <span className="label-text text-black">{t("onSale")} </span>
             </div>
           </div>
           <div className="flex flex-col gap-2">
-            <h6 className="text-xs text-black">Filter products by Price</h6>
+            <h6 className="text-xs text-black">{t("filterByPrice")}</h6>
             <div className="flex gap-2">
               <input
                 type="text"
@@ -87,14 +89,14 @@ const FeaturedProducts = () => {
           </div>
 
           <div className="flex flex-col gap-1">
-            <h6 className="text-xs text-black">Filter products by Category</h6>
+            <h6 className="text-xs text-black">{t("filterByCategory")}</h6>
             <div>
               <select
                 className="select select-error select-xs  bg-white text-black"
                 onChange={(e) => setCategoryFilter(e.target.value)}
               >
                 <option disabled selected>
-                  Select Product Category
+                  {t("chooseCategory")}
                 </option>
                 {categoryData.map((categories) => (
                   <option key={categories.id}>{categories.name}</option>
@@ -103,14 +105,14 @@ const FeaturedProducts = () => {
             </div>
           </div>
           <div className="flex flex-col gap-1">
-            <h6 className="text-xs text-black">Products Per Page</h6>
+            <h6 className="text-xs text-black">{t("resultQuantity")}</h6>
             <div>
               <select
                 className="select select-error select-xs  bg-white text-black"
                 onChange={(e) => setPageSize(e.target.value)}
               >
                 <option disabled selected>
-                  Result Quantity
+                  {t("quantity")}
                 </option>
                 <option>4</option>
                 <option>8</option>
