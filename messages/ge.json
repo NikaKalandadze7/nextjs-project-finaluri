@@ -20,6 +20,14 @@
     "resultQuantity": "პროდუქტიების რაოდენობა გვერდზე",
     "quantity": "აირჩიე რეოდენობა"
   },
+  "PurchasedItems": {
+    "orderPlacedOn": "შეკვეთა განხორციელდა:",
+    "totalItemsPurchased": "შეძენილი ნივთების რაოდენობა:",
+    "totalCost": "ჯამური ფასი:",
+    "orderId": "შეკვეთის აიდი:",
+    "cancelOrder": "შეკვეთის გაუქმება",
+    "failedToRemove": "გაუქმება ვერ მოხდა"
+  },
   "ShoppingCart": {
     "itemCount": "პროდუქტების რაოდენობა",
     "totalPrice": "ჯამური ფასი",
@@ -43,10 +51,68 @@
     "manageAccount": "პროფილის რედაქტირება",
     "myOrders": "ჩემი შეკვეთები",
     "manageProducts": "პროდუქტების რედაქტირება",
-    "logOut": "პროფილიდან გამოსვლა"
+    "logOut": "პროფილიდან გამოსვლა",
+    "createAnAccount": "პროფილის შექმნა",
+    "firstName": "სახელი",
+    "lastName": "გვარი",
+    "phoneNumber": "ტელეფონის ნომერი",
+    "alreadyHaveAnAccount": "უკვე გაქვს პროფილი?",
+    "welcome": "გამარჯობა",
+    "updateYourPersonalInformation": "შეგიძლია შენი პერსონალური ინფორმაცია დაარედაქტირო ან",
+    "clickHereToChangeYourPassword": "პაროლის შესაცვლელად დააკლიკე აქ",
+    "updateAccountInformation": "პერსონალური ინფორმაციის განახლება",
+    "edit": "რედაქტირება",
+    "Error3": "პერსონალური ინფორმაცია ვერ განახლდა",
+    "changePasswordPrompt": "შეგიძლიათ პაროლი შეცვალოთ ან",
+    "updatePersonalInfoLink": "პერსონალური ინფორმაციის დასარედაქტირებლად დააკლიკეთ აქ",
+    "newPassword": "ახალი პაროლი",
+    "confirmPassword": "დაადასტურე პაროლი",
+    "updatePassword": "განაახლე პაროლი",
+    "Error4": "ახალი პაროლები ერთმანეთს არ ემთხვევა!",
+    "Error5": "პაროლის შეცვლისას მოხდა პრობლემა",
+    "notLoggedIn": "თქვენს პროფილში შესასვლელათ დააკლიკეთ აქ"
   },
   "Search": {
     "placeholder": "რას ეძებთ?",
     "notFound": "პროდუქტი ვერ მოიძებნა."
+  },
+  "Header": {
+    "announcement": "საზაფხულო ფასდაკლება შერჩეულ პროდუქტებზე და უფასო მიტანა - -50%!",
+    "shop": "იშოპინგე ახლავე!"
+  },
+  "Footer": {
+    "newsletter": "სიახლეები",
+    "enterYourEmailAddress": "შეიყვანეთ თქვენი იმეილის მისამართი",
+    "subscribe": "გამოწერა",
+    "services": "სერვისები",
+    "branding": "ბრენდინგი",
+    "design": "დიზაინი",
+    "marketing": "მარკეტინგი",
+    "advertisement": "რეკლამა",
+    "company": "კომპანია",
+    "aboutUs": "ჩვენს შესახებ",
+    "contact": "კონტაქტი",
+    "jobs": "სამუშაოები",
+    "pressKit": "პრესა",
+    "legal": "იურიდიული მხარე",
+    "termsOfUse": "წესები",
+    "privacyPolicy": "Კონფიდენციალურობის პოლიტიკა",
+    "cookiePolicy": "ქუქიების შესახებ",
+    "socials": "სოციალური ქსელები",
+    "copyright": "საავტორო უფლება © 2024 - ყველა უფლება დაცულია"
+  },
+  "AddProductsAndCategories": {
+    "addNewProduct": "დაამატე ახალი პროდუქტი",
+    "addNewCategory": "დაამატე ახალი კატეგორია",
+    "productTitle": "პროდუქტის სახელი",
+    "productDescription": "პროდუქტის აღწერა",
+    "productPrice": "პროდუქტის ფასი",
+    "selectProductCategory": "აირჩიე პროდუქტის კატეგორია",
+    "onSale": "ფასდაკლება",
+    "productSalePrice": "ფასდაკლებული ფასი",
+    "addProduct": "დაამატე პროდუქტი",
+    "fillInAllFields": "გთხოვთ შეავსოთ ყველა ველი!",
+    "unableToAddProduct": "პროდუქტი ვერ დაემატა",
+    "failedToFetchCategories": "კატეგორიების წამოღება ვერ მოხერხდა:"
   }
 }

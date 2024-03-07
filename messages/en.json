@@ -19,6 +19,15 @@
     "resultQuantity": "Products Per Page",
     "quantity": "Result Quantity"
   },
+  "PurchasedItems": {
+    "orderPlacedOn": "Order Placed on",
+    "totalItemsPurchased": "Total Items Purchased:",
+    "totalCost": "Total Cost:",
+    "orderId": "Order ID:",
+    "cancelOrder": "Cancel Order",
+    "failedToRemove": "Failed to remove:"
+  },
+
   "ShoppingCart": {
     "itemCount": "Item Count",
     "totalPrice": "Total Price",
@@ -41,11 +50,70 @@
     "register": "Register instead",
     "Error1": "Please fill in all Fields",
     "Error2": "Incorrect email or password",
-    "email": "Email",
-    "password": "Password"
+    "email": "Email Address",
+    "password": "Password",
+    "createAnAccount": "Create an Account",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "phoneNumber": "Phone Number",
+    "alreadyHaveAnAccount": "Already have an account?",
+    "welcome": "Welcome",
+    "updateYourPersonalInformation": "You can update your personal information here or",
+    "clickHereToChangeYourPassword": "Click Here to change your password",
+    "updateAccountInformation": "Update account Information",
+    "edit": "Edit",
+    "Error3": "Failed to update user info",
+    "changePasswordPrompt": "You can change your password here or",
+    "updatePersonalInfoLink": "Click Here to update your personal information",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm Password",
+    "updatePassword": "Update Password",
+    "Error4": "New Passwords do not match!",
+    "Error5": "Failed to update password",
+    "notLoggedIn": "Please Click here to log into the website"
   },
   "Search": {
     "placeholder": "What are you looking for?",
     "notFound": "No products found."
+  },
+  "Header": {
+    "announcement": "Summer Sale For Select products And Free Express Delivery - OFF 50%!",
+    "shop": "Shop Now"
+  },
+  "Footer": {
+    "newsletter": "Newsletter",
+    "enterYourEmailAddress": "Enter your email address",
+    "subscribe": "Subscribe",
+    "services": "Services",
+    "branding": "Branding",
+    "design": "Design",
+    "marketing": "Marketing",
+    "advertisement": "Advertisement",
+    "company": "Company",
+    "aboutUs": "About us",
+    "contact": "Contact",
+    "jobs": "Jobs",
+    "pressKit": "Press kit",
+    "legal": "Legal",
+    "termsOfUse": "Terms of use",
+    "privacyPolicy": "Privacy policy",
+    "cookiePolicy": "Cookie policy",
+    "socials": "Socials",
+    "copyright": "Copyright © 2024 - All rights reserved"
+  },
+
+  "AddProductsAndCategories": {
+    "addNewProduct": "Add New Product",
+    "addNewCategory": "Add New Category",
+    "productTitle": "Product Title",
+    "productDescription": "Product Description",
+    "productPrice": "Product Price",
+    "selectProductCategory": "Select Product Category",
+    "onSale": "On Sale",
+    "productSalePrice": "Product Sale Price",
+    "addProduct": "Add Product",
+    "fillInAllFields": "Please fill in all Fields!",
+    "unableToAddProduct": "Unable To add Product",
+    "failedToFetchCategories": "Failed to fetch categories:"
   }
 }

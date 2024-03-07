@@ -5,6 +5,7 @@ import {
   useUserInfoStore,
   useShoppingCartStore,
   useWishlistStore,
+  usePurchasesStore,
 } from "@/store";
 
 const Logout = () => {
@@ -12,13 +13,14 @@ const Logout = () => {
   const { userInfo, setUserInfo } = useUserInfoStore();
   const { clearCart } = useShoppingCartStore();
   const { clearWishlist } = useWishlistStore();
-
+  const { clearPurchases } = usePurchasesStore();
   const handleLogOut = () => {
     localStorage.clear();
     setLoggedIn(false);
     setUserInfo(null);
     clearCart();
     clearWishlist();
+    clearPurchases();
   };
   return (
     <div>

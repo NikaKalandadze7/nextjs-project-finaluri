@@ -4,6 +4,8 @@ import { useIsLoggedInStore, useUserInfoStore } from "@/store";
 import { ErrorPopup, LabeledInput, MainButton } from "@Components";
 import { updateUserInfoService, userInfoService } from "@/services";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { useParams } from "next/navigation";
 
 const UserManagement = () => {
   const { userInfo, setUserInfo, initializeUserInfo } = useUserInfoStore();
@@ -22,6 +24,7 @@ const UserManagement = () => {
   const [phoneNumberDisabled, setPhoneNumberDisabled] = useState<boolean>(true);
 
   const [errorOpen, setErrorOpen] = useState<boolean>(false);
+  const t = useTranslations("User");
 
   const handleFNameEditing = () => {
     setFNameDisabled(!fNameDisabled);
@@ -38,7 +41,8 @@ const UserManagement = () => {
   const handleErrorClose = () => {
     setErrorOpen(false);
   };
-
+  const { locale } = useParams();
+  const localizedPath = (path: string) => `/${locale}${path}`;
   const onUpdate = async () => {
     try {
       const response = await updateUserInfoService({
@@ -60,9 +64,9 @@ const UserManagement = () => {
         !phoneNumber ||
         phoneNumber == ""
       ) {
-        setErrorMessage("Please fill in all Fields!");
+        setErrorMessage(t("Error1"));
       } else {
-        setErrorMessage("Failed to update user info");
+        setErrorMessage(t("Error3"));
       }
       setErrorOpen(true);
     }
@@ -75,29 +79,28 @@ const UserManagement = () => {
 
   return (
     <div className="flex flex-col justify-center items-center gap-9 w-full">
-      <div className="flex flex-col items-center text-lg text-black text-center ">
+      <div className="flex flex-col items-center text-lg text-black text-center">
         <h3 className="flex gap-2">
-          <span>Welcome!</span>
+          <span>{t("welcome")}!</span>
           <span className="text-[#ef4c53] font-semibold">
             {userInfo?.first_name} {userInfo?.last_name}
           </span>
         </h3>
-        <p>You can update your personal information here or</p>
-        <Link
-          className="text-[#ef4c53] font-semibold"
-          href={"/account/changepassword"}
-        >
-          Click Here to change your password
+        <p>{t("updateYourPersonalInformation")}</p>
+        <Link href={localizedPath("/account/changepassword")}>
+          <p className="text-[#ef4c53] font-semibold">
+            {t("clickHereToChangeYourPassword")}
+          </p>
         </Link>
       </div>
       <div className="p-12 shadow-lg rounded-lg flex flex-row gap-12 flex-wrap w-[50%]">
         <form
-          className="flex flex-row w-full flex-wrap gap-4 items-center justify-between "
+          className="flex flex-row w-full flex-wrap gap-4 items-center justify-between"
           autoComplete="new-password"
         >
           <div className="flex flex-row gap-4 w-[calc(50%-16px)] items-between ">
             <LabeledInput
-              label="First Name"
+              label={t("firstName")}
               type="text"
               value={fname}
               maxLength={999}
@@ -109,12 +112,12 @@ const UserManagement = () => {
               className="text-[#ef4c53]"
               onClick={() => handleFNameEditing()}
             >
-              Edit
+              {t("edit")}
             </button>
           </div>
           <div className="flex flex-row gap-4 w-[calc(50%-16px)] items-center ">
             <LabeledInput
-              label="Last Name"
+              label={t("lastName")}
               type="text"
               value={lname}
               maxLength={999}
@@ -126,12 +129,12 @@ const UserManagement = () => {
               className="text-[#ef4c53]"
               onClick={() => handleLNameEditing()}
             >
-              Edit
+              {t("edit")}
             </button>
           </div>
           <div className="flex flex-row gap-4 w-[calc(50%-16px)] items-center ">
             <LabeledInput
-              label="Email Address"
+              label={t("email")}
               type="email"
               value={email}
               maxLength={999}
@@ -143,12 +146,12 @@ const UserManagement = () => {
               className="text-[#ef4c53]"
               onClick={() => handleEmailEditing()}
             >
-              Edit
+              {t("edit")}
             </button>
           </div>
           <div className="flex flex-row gap-4 w-[calc(50%-16px)] items-center ">
             <LabeledInput
-              label="Phone Number"
+              label={t("phoneNumber")}
               type="text"
               value={phoneNumber}
               maxLength={8}
@@ -160,12 +163,12 @@ const UserManagement = () => {
               className="text-[#ef4c53]"
               onClick={() => handlePhoneNumberEditing()}
             >
-              Edit
+              {t("edit")}
             </button>
           </div>
 
           <MainButton
-            label={"Update account Information"}
+            label={t("updateAccountInformation")}
             size={"w-[100%]"}
             buttonAction={() => onUpdate()}
           />

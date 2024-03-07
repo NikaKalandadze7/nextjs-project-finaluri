@@ -4,17 +4,19 @@ import { ErrorPopup, InputForm, Logout, MainButton } from "@Components";
 import Link from "next/link";
 import { useIsLoggedInStore, useUserInfoStore } from "@/store";
 import { signUpService, userInfoService } from "@/services";
+import { useTranslations } from "next-intl";
 
 const SignUp = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [fname, setFname] = useState<string>("");
   const [lname, setLname] = useState<string>("");
-  const [phoneNumber, setphoneNumber] = useState<string>("");
+  const [phoneNumber, setPhoneNumber] = useState<string>("");
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [errorOpen, setErrorOpen] = useState<boolean>(false);
   const { loggedIn, setLoggedIn } = useIsLoggedInStore();
   const { userInfo, setUserInfo } = useUserInfoStore();
+  const t = useTranslations("User");
 
   const handleErrorClose = () => {
     setErrorOpen(false);
@@ -35,14 +37,15 @@ const SignUp = () => {
       setLoggedIn(true);
       fetchUserInfo();
     } catch (error) {
-      if (!email || !password || !fname || !lname || phoneNumber) {
-        setErrorMessage("Please fill in all Fields!");
+      if (!email || !password || !fname || !lname || !phoneNumber) {
+        setErrorMessage(t("Error1"));
       } else {
-        setErrorMessage("Incorrect email or password");
+        setErrorMessage(t("Error2"));
       }
       setErrorOpen(true);
     }
   };
+
   const fetchUserInfo = async () => {
     try {
       const fetchedUserInfo = await userInfoService();
@@ -52,6 +55,7 @@ const SignUp = () => {
       console.error("Failed to fetch user info:", error);
     }
   };
+
   return (
     <div>
       {loggedIn ? (
@@ -63,36 +67,36 @@ const SignUp = () => {
             onSubmit={(e) => e.preventDefault()}
           >
             <div className="text-black flex flex-col">
-              <h1 className="text-[36px] text-black">Create an Account</h1>
-              <span className="">Enter your details below</span>
+              <h1 className="text-[36px] text-black">{t("createAnAccount")}</h1>
+              <span>{t("details")}</span>
             </div>
             <InputForm
               type="text"
-              label="First Name"
+              label={t("firstName")}
               handleChange={(e) => setFname(e)}
               maxLength={999}
             />
             <InputForm
               type="text"
-              label="Last Name"
+              label={t("lastName")}
               handleChange={(e) => setLname(e)}
               maxLength={999}
             />
             <InputForm
               type="email"
-              label="Email"
+              label={t("email")}
               handleChange={(e) => setEmail(e)}
               maxLength={999}
             />
             <InputForm
               type="text"
-              label="Phone Number"
-              handleChange={(e) => setphoneNumber(e)}
+              label={t("phoneNumber")}
+              handleChange={(e) => setPhoneNumber(e)}
               maxLength={9}
             />
             <InputForm
               type="password"
-              label="Password"
+              label={t("password")}
               handleChange={(e) => setPassword(e)}
               maxLength={999}
             />
@@ -108,14 +112,14 @@ const SignUp = () => {
                 />
               </div>
               <MainButton
-                label={"Create Account"}
+                label={t("createAccount")}
                 size={"w-[100%]"}
                 buttonAction={() => onSignUp()}
               />
               <div className="flex flex-row gap-4">
-                <span>Already have an account?</span>
-                <Link href="/authenticate" className="text-[#DB4444]">
-                  Log In
+                <span>{t("alreadyHaveAnAccount")}</span>
+                <Link href="/authenticate">
+                  <a className="text-[#DB4444]">{t("logIn")}</a>
                 </Link>
               </div>
             </div>

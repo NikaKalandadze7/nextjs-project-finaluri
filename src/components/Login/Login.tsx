@@ -35,9 +35,9 @@ const Login = () => {
       await fetchCartItems();
     } catch (error) {
       if (!email || !password || email === "" || password === "") {
-        setErrorMessage("Please fill in all Fields");
+        setErrorMessage(t("Error1"));
       } else {
-        setErrorMessage("Incorrect email or password");
+        setErrorMessage(t("Error2"));
       }
       setErrorOpen(true);
     }

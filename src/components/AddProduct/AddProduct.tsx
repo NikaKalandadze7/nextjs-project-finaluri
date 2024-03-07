@@ -5,7 +5,7 @@ import MainButton from "../MainButton/MainButton";
 import { addProductService, categoriesService } from "@/services";
 import ErrorPopup from "../ErrorPopup/ErrorPopup";
 import { CategoriesInterface } from "@/types";
-
+import { useTranslations } from "next-intl";
 const AddProduct = () => {
   const [title, setTitle] = useState<string>("");
   const [category, setCategory] = useState<string>("");
@@ -17,7 +17,7 @@ const AddProduct = () => {
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [errorOpen, setErrorOpen] = useState<boolean>(false);
   const [categoryData, setCategoryData] = useState<CategoriesInterface[]>([]);
-
+  const t = useTranslations("AddProductsAndCategories");
   const handleErrorClose = () => {
     setErrorOpen(false);
   };
@@ -34,10 +34,10 @@ const AddProduct = () => {
       });
       console.log(response);
     } catch (error) {
-      if (!title || !category || !description || !price || image) {
-        setErrorMessage("Please fill in all Fields!");
+      if (!title || !category || !description || !price || !image) {
+        setErrorMessage(t("fillInAllFields"));
       } else {
-        setErrorMessage("Unable To add Product");
+        setErrorMessage(t("unableToAddProduct"));
       }
       setErrorOpen(true);
     }
@@ -48,7 +48,7 @@ const AddProduct = () => {
         const categories: CategoriesInterface[] = await categoriesService();
         setCategoryData(categories);
       } catch (error) {
-        console.error("Failed to fetch categories:", error);
+        console.error(t("failedToFetchCategories"), error);
       }
     };
 
@@ -58,7 +58,7 @@ const AddProduct = () => {
   return (
     <div className="flex flex-col gap-5">
       <LabeledInput
-        label="Product Title"
+        label={t("productTitle")}
         type="text"
         value={title}
         maxLength={99}
@@ -67,7 +67,7 @@ const AddProduct = () => {
       />
 
       <LabeledInput
-        label="Product Description"
+        label={t("productDescription")}
         type="text"
         value={description}
         maxLength={199}
@@ -75,7 +75,7 @@ const AddProduct = () => {
         handleChange={(e) => setDescription(e)}
       />
       <LabeledInput
-        label="Product Price"
+        label={t("productPrice")}
         type="number"
         value={price}
         maxLength={199}
@@ -88,7 +88,7 @@ const AddProduct = () => {
           onChange={(e) => setCategory(e.target.value)}
         >
           <option disabled selected>
-            Select Product Category
+            {t("selectProductCategory")}
           </option>
           {categoryData.map((categories) => (
             <option key={categories.id}>{categories.name}</option>
@@ -121,12 +121,12 @@ const AddProduct = () => {
               onChange={(e) => setOnSale(e.target.checked)}
               className="checkbox checkbox-error"
             />
-            <span className="label-text text-black">On Sale</span>
+            <span className="label-text text-black">{t("onSale")}</span>
           </label>
         </div>
         <div className={`w-full ${onSale ? "no-underline" : "line-through "}`}>
           <LabeledInput
-            label="Product Sale Price"
+            label={t("productSalePrice")}
             type="text"
             value={salePrice}
             maxLength={199}
@@ -136,9 +136,9 @@ const AddProduct = () => {
         </div>
       </div>
       <MainButton
-        size={"w-full"}
-        buttonAction={() => addProduct()}
-        label={"Add Product"}
+        size="w-full"
+        buttonAction={addProduct}
+        label={t("addProduct")}
       />
       <div className={` ${errorOpen ? "block" : "hidden"} `}>
         <ErrorPopup

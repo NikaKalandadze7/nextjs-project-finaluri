@@ -4,14 +4,15 @@ import { CartDropdownItemDisplay, ShoppingCartIcon } from "@Components";
 import { useShoppingCartStore } from "@/store";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-
+import { useParams } from "next/navigation";
 const ShoppingCart = () => {
   const { shoppingCart, fetchCartItems } = useShoppingCartStore();
 
   useEffect(() => {
     fetchCartItems();
   }, [fetchCartItems]);
-
+  const { locale } = useParams();
+  const localizedPath = (path: string) => `/${locale}${path}`;
   const getTotalItemCount = (shoppingCart: any) => {
     return shoppingCart.reduce(
       (total: number, product: any) => total + product.count,
@@ -58,11 +59,14 @@ const ShoppingCart = () => {
           />
         ))}
         <div className="flex flex-row justify-between">
-          <Link href={"/cart"} className="btn btn-outline btn-error btn-sm">
+          <Link
+            href={localizedPath("/cart")}
+            className="btn btn-outline btn-error btn-sm"
+          >
             {t("cart")}
           </Link>
           <Link
-            href={"/cart/checkout"}
+            href={localizedPath("/cart/checkout")}
             className="btn  btn-error btn-sm text-white"
           >
             {t("proceed")}

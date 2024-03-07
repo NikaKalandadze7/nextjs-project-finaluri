@@ -1,17 +1,16 @@
 import React from "react";
 import Link from "next/link";
 import { MainNavigation, SearchBar, UserArea } from "@Components";
-
+import { useTranslations } from "next-intl";
 const Header = () => {
+  const t = useTranslations("Header");
   return (
     <div className=" border-gray-300 border-b-[1px] ">
       <div className="bg-black text-white flex justify-center items-center h-12">
         <div className="flex flex-row items-center gap-2">
-          <h4 className="text-sm font-light ">
-            Summer Sale For Select products And Free Express Delivery - OFF 50%!
-          </h4>
+          <h4 className="text-sm font-light ">{t("announcement")}</h4>
           <Link className="font-semibold underline" href={"/products"}>
-            ShopNow!
+            {t("shop")}
           </Link>
         </div>
       </div>

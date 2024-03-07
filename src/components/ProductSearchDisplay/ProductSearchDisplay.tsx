@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-
+import { useParams } from "next/navigation";
 interface ProductSearchDisplayProps {
   price: number;
   category: string | undefined;
@@ -16,10 +16,12 @@ const ProductSearchDisplay: React.FC<ProductSearchDisplayProps> = ({
   image,
   id,
 }) => {
+  const { locale } = useParams();
+  const localizedPath = (path: string) => `/${locale}${path}`;
   return (
     <Link
       href={{
-        pathname: `/products/details`,
+        pathname: localizedPath("/products/details"),
         query: { id },
       }}
       className="relative z-[999] flex flex-row bg-white justify-between items-between p-1 m-2 border-solid border-[1px] border-[#c7c7c7] rounded-md  hover:text-tretiary hover:border-tretiary ease-in-out duration-200"

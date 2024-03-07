@@ -2,7 +2,7 @@
 import { ProductInterface } from "@/types";
 import React, { useState } from "react";
 import Link from "next/link";
-
+import { useParams } from "next/navigation";
 const ProductCardSmall: React.FC<ProductInterface> = ({
   id,
   title,
@@ -15,11 +15,12 @@ const ProductCardSmall: React.FC<ProductInterface> = ({
   const [setIsHovered] = useState(false);
 
   const discountPercentage = Math.round(((price - salePrice) / price) * 100);
-
+  const { locale } = useParams();
+  const localizedPath = (path: string) => `/${locale}${path}`;
   return (
     <Link
       href={{
-        pathname: `/products/details`,
+        pathname: localizedPath("/products/details"),
         query: { id },
       }}
       className="rounded-md overflow-hidden   bg-white text-black z-0 min-w-[135px] w-[20%]"

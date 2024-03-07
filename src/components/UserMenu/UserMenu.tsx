@@ -4,6 +4,7 @@ import { LoggedInMenu, LoginIcon, SignUpIcon, UserIcon } from "@Components";
 import Link from "next/link";
 import { useIsLoggedInStore, useUserInfoStore } from "@/store";
 import { useTranslations } from "next-intl";
+import { useParams } from "next/navigation";
 
 const UserMenu = () => {
   const { loggedIn, initializeLoggedIn } = useIsLoggedInStore();
@@ -13,7 +14,8 @@ const UserMenu = () => {
     initializeUserInfo();
   }, []);
   const t = useTranslations("User");
-
+  const { locale } = useParams();
+  const localizedPath = (path: string) => `/${locale}${path}`;
   return (
     <>
       <div className="dropdown dropdown-end">
@@ -38,7 +40,7 @@ const UserMenu = () => {
             <>
               <li>
                 <Link
-                  href={"/authenticate"}
+                  href={localizedPath("/authenticate")}
                   className="flex flex-row items-center gap-3"
                 >
                   <LoginIcon color="white" height={18} width={18} />
@@ -47,7 +49,7 @@ const UserMenu = () => {
               </li>
               <li>
                 <Link
-                  href={"/authenticate/signup"}
+                  href={localizedPath("/authenticate/signup")}
                   className="flex flex-row items-center gap-3"
                 >
                   <SignUpIcon color="white" height={18} width={18} />

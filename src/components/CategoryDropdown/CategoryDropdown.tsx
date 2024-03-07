@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { categoriesService } from "@/services";
-import Link from "next/link";
+
 import { CategoriesInterface } from "@/types";
 import CategoryButton from "../CategoryButton/CategoryButton";
 

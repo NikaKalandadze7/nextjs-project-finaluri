@@ -6,13 +6,17 @@ import { newPasswordService } from "@/services";
 import { useIsLoggedInStore, useUserInfoStore } from "@/store";
 import Link from "next/link";
 import React, { useState } from "react";
+import { useTranslations } from "next-intl";
+import { useParams } from "next/navigation";
 
 const ChangePassword = () => {
   const { userInfo } = useUserInfoStore();
   const [password, setPassword] = useState<string>("");
   const [confirmPassword, setConfirmPassword] = useState<string>("");
   const [errorMessage, setErrorMessage] = useState<string>("");
-
+  const t = useTranslations("User");
+  const { locale } = useParams();
+  const localizedPath = (path: string) => `/${locale}${path}`;
   const [errorOpen, setErrorOpen] = useState<boolean>(false);
   const handleErrorClose = () => {
     setErrorOpen(false);
@@ -25,9 +29,9 @@ const ChangePassword = () => {
       console.log(response);
     } catch (error) {
       if (password != confirmPassword) {
-        setErrorMessage("New Passwords do not match!");
+        setErrorMessage(t("Error4"));
       } else {
-        setErrorMessage("Failed to update user info");
+        setErrorMessage(t("Error5"));
       }
       setErrorOpen(true);
     }
@@ -36,14 +40,17 @@ const ChangePassword = () => {
     <div className="flex flex-col justify-center items-center gap-9 w-full">
       <div className="flex flex-col items-center text-lg text-black text-center ">
         <h3 className="flex gap-2">
-          <span>Welcome!</span>
+          <span>{t("welcome")}!</span>
           <span className="text-[#ef4c53] font-semibold">
             {userInfo?.first_name} {userInfo?.last_name}
           </span>
         </h3>
-        <p>You can change your password here or</p>
-        <Link className="text-[#ef4c53] font-semibold" href={"/account"}>
-          Click Here to update your personal information
+        <p>{t("changePasswordPrompt")}</p>
+        <Link
+          className="text-[#ef4c53] font-semibold"
+          href={localizedPath("/account")}
+        >
+          {t("updatePersonalInfoLink")}
         </Link>
       </div>
       <div className="p-12 shadow-lg rounded-lg flex flex-row gap-12 flex-wrap w-[50%]">
@@ -53,7 +60,7 @@ const ChangePassword = () => {
         >
           <div className="flex flex-row gap-4 w-full items-center ">
             <LabeledInput
-              label="New Password"
+              label={t("newPassword")}
               type="password"
               value={password}
               maxLength={999}
@@ -63,7 +70,7 @@ const ChangePassword = () => {
           </div>
           <div className="flex flex-row gap-4 w-full items-center ">
             <LabeledInput
-              label="Confirm Password"
+              label={t("confirmPassword")}
               type="password"
               value={confirmPassword}
               maxLength={999}
@@ -73,7 +80,7 @@ const ChangePassword = () => {
           </div>
 
           <MainButton
-            label={"Update Password"}
+            label={t("updatePassword")}
             size={"w-[100%]"}
             buttonAction={() => onUpdate()}
           />

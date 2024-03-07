@@ -3,7 +3,7 @@ import { ProductInterface } from "@/types";
 import React, { useState } from "react";
 import { AddToCartButton, FavoriteButton, MainButton } from "@Components";
 import Link from "next/link";
-
+import { useParams } from "next/navigation";
 const ProductCardFeatured: React.FC<ProductInterface> = ({
   id,
   title,
@@ -16,6 +16,8 @@ const ProductCardFeatured: React.FC<ProductInterface> = ({
   const [isHovered, setIsHovered] = useState(false);
 
   const discountPercentage = Math.round(((price - salePrice) / price) * 100);
+  const { locale } = useParams();
+  const localizedPath = (path: string) => `/${locale}${path}`;
 
   return (
     <div
@@ -41,7 +43,7 @@ const ProductCardFeatured: React.FC<ProductInterface> = ({
       </div>
       <Link
         href={{
-          pathname: `/products/details`,
+          pathname: localizedPath("/products/details"),
           query: { id },
         }}
         className="flex flex-col flex-nowrap"

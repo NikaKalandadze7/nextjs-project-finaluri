@@ -3,7 +3,7 @@ import { ProductInterface } from "@/types";
 import React, { useState } from "react";
 import { AddToCartButton, RemoveFromWishlistButton } from "@Components";
 import Link from "next/link";
-
+import { useParams } from "next/navigation";
 const ProductInWishlist: React.FC<ProductInterface> = ({
   id,
   title,
@@ -12,9 +12,11 @@ const ProductInWishlist: React.FC<ProductInterface> = ({
   image,
   salePrice,
   category_name,
+  productId,
 }: ProductInterface) => {
   const discountPercentage = Math.round(((price - salePrice) / price) * 100);
-
+  const { locale } = useParams();
+  const localizedPath = (path: string) => `/${locale}${path}`;
   return (
     <div className="w-[calc(25%-20px)] rounded-md bg-white text-black z-0">
       <div
@@ -31,7 +33,7 @@ const ProductInWishlist: React.FC<ProductInterface> = ({
         </div>
 
         <div className="absolute md:right-2 md:top-2 xs:right-1 xs:top-1 ">
-          <RemoveFromWishlistButton productId={id} />
+          <RemoveFromWishlistButton productId={productId} />
         </div>
         <AddToCartButton isHovered={true} id={id} />
       </div>
@@ -57,7 +59,7 @@ const ProductInWishlist: React.FC<ProductInterface> = ({
         <div className="">
           <Link
             href={{
-              pathname: `/products/details`,
+              pathname: localizedPath("/products/details"),
               query: { id },
             }}
           >

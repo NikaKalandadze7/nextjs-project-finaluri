@@ -3,7 +3,7 @@ import { ProductInterface } from "@/types";
 import React, { useState } from "react";
 import { AddToCartButton, FavoriteButton, MainButton } from "@Components";
 import Link from "next/link";
-
+import { useParams } from "next/navigation";
 const ProductCardLarge: React.FC<ProductInterface> = ({
   id,
   title,
@@ -21,7 +21,8 @@ const ProductCardLarge: React.FC<ProductInterface> = ({
   };
 
   const discountPercentage = Math.round(((price - salePrice) / price) * 100);
-
+  const { locale } = useParams();
+  const localizedPath = (path: string) => `/${locale}${path}`;
   return (
     <div
       className="card-large bg-white text-black z-0"
@@ -66,7 +67,7 @@ const ProductCardLarge: React.FC<ProductInterface> = ({
         <div className="">
           <Link
             href={{
-              pathname: `/products/details`,
+              pathname: localizedPath("/products/details"),
               query: { id },
             }}
           >

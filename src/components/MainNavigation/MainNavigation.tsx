@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import CategoryDropdown from "../CategoryDropdown/CategoryDropdown";
 import { useTranslations } from "next-intl";
 
@@ -32,7 +32,7 @@ const MainNavigation = () => {
         </div>
       </li>
       <li className="text-black text-base drop-shadow-lg font-semibold hover-underline-animation">
-        <Link href="/contact">{t("contact")}</Link>
+        <Link href={localizedPath("/contact")}>{t("contact")}</Link>
       </li>
     </ul>
   );

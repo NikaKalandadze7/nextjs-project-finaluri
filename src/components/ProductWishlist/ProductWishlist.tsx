@@ -15,7 +15,8 @@ const ProductWishlist = () => {
           wishlist.map((product) => (
             <ProductInWishlist
               key={product.id}
-              id={product.id}
+              productId={product.id}
+              id={product.likedProduct.id}
               title={product.likedProduct.title}
               price={product.likedProduct.price}
               image={product.likedProduct.image}

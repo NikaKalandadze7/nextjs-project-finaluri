@@ -6,7 +6,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { TrashIcon } from "..";
 import { useShoppingCartStore } from "@/store";
-
+import { useParams } from "next/navigation";
 const CartDropdownItemDisplay: React.FC<CartProductInterface> = ({
   id,
   title,
@@ -38,11 +38,18 @@ const CartDropdownItemDisplay: React.FC<CartProductInterface> = ({
     const singleUnitPrice = salePrice ? salePrice : price;
 
     const currentPrice = singleUnitPrice * count;
-
+    const { locale } = useParams();
+    const localizedPath = (path: string) => `/${locale}${path}`;
     return (
       <li key={id} className="flex ">
         <div className="flex flex-row justify-between w-full">
-          <Link href={`/products/${id}`} className="flex flex-row gap-2">
+          <Link
+            href={{
+              pathname: localizedPath("/products/details"),
+              query: { id },
+            }}
+            className="flex flex-row gap-2"
+          >
             <Image src={image} width={28} height={28} alt={title} />
             <h6>{title}</h6>
           </Link>

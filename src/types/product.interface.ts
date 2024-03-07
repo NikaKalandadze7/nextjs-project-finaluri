@@ -9,4 +9,5 @@ export default interface ProductInterface {
   salePrice: number | null;
   category_name?: string;
   count?: number;
+  productId?: string;
 }
