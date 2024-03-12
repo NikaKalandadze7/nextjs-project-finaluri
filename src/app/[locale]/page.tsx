@@ -17,7 +17,7 @@ export default function Home({
         <MainBanner />
       </div>
       <div className="flex flex-col w-full">
-        <h1 className="text-4xl text-black font-bold mt-[140px] mb-6 border-gray-300 border-t-[1px]  pt-8 ">
+        <h1 className="text-4xl text-secondary font-bold mt-[140px] mb-6 border-gray-300 border-t-[1px]  pt-8 ">
           {t("featured")}
         </h1>
         <FeaturedProducts />

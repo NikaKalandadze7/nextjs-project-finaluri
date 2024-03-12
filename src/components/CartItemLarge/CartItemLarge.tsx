@@ -43,7 +43,7 @@ const CartItemLarge: React.FC<CartProductInterface> = ({
   const localizedPath = (path: string) => `/${locale}${path}`;
   return (
     <li key={id} className="flex w-full">
-      <div className="flex flex-row justify-between  items-center w-full text-black">
+      <div className="flex flex-row justify-between  items-center w-full text-secondary">
         <Link
           href={{
             pathname: localizedPath("/products/details"),
@@ -58,7 +58,7 @@ const CartItemLarge: React.FC<CartProductInterface> = ({
             alt={title}
             className="bg-[#f3eae3]"
           />
-          <h6 className="text-black font-semibold text-xl">{title}</h6>
+          <h6 className="text-secondary font-semibold text-xl">{title}</h6>
           <span className="badge badge-primary badge-outline text-xs">
             {category_name}
           </span>
@@ -66,14 +66,14 @@ const CartItemLarge: React.FC<CartProductInterface> = ({
         </Link>
         <div className="flex flex-row items-center gap-12 ">
           <button
-            className="hover:bg-red-100 rounded-[50%] border-solid border-[1px] border-black w-5 h-5 flex justify-center items-center text-center hover:text-tretiary  hover:border-tretiary ease-in-out duration-200"
+            className="hover:bg-red-100 rounded-[50%] border-solid border-[1px] border-secondary w-5 h-5 flex justify-center items-center text-center hover:text-tretiary  hover:border-tretiary ease-in-out duration-200"
             onClick={() => removeFromCart(false)}
           >
             -
           </button>
           <span className="text-lg">{count}</span>
           <button
-            className="hover:bg-blue-100 rounded-[50%] border-solid border-[1px] border-black w-5 h-5 flex justify-center items-center text-center hover:text-tretiary  hover:border-tretiary ease-in-out duration-200"
+            className="hover:bg-blue-100 rounded-[50%] border-solid border-[1px] border-secondary w-5 h-5 flex justify-center items-center text-center hover:text-tretiary  hover:border-tretiary ease-in-out duration-200"
             onClick={() => addToCart(id)}
           >
             +
@@ -83,7 +83,7 @@ const CartItemLarge: React.FC<CartProductInterface> = ({
             onClick={() => removeFromCart(true)}
             className="ml-3 hover:bg-red-300 h-12 w-12 rounded-[50%] flex items-center justify-center"
           >
-            <TrashIcon height={38} width={38} color={"black"}></TrashIcon>
+            <TrashIcon height={38} width={38} color={"secondary"}></TrashIcon>
           </button>
         </div>
       </div>

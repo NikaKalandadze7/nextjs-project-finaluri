@@ -15,8 +15,8 @@ const Page = () => {
           <div className="flex flex-col gap-5 w-[50%] ">
             <div className="collapse collapse-arrow">
               <input type="radio" name="my-accordion-2" defaultChecked />
-              <div className="flex flex-row justify-between text-[#ef4c53] collapse-title ">
-                <h1 className="text-black font-bold text-2xl">
+              <div className="flex flex-row justify-between text-accent collapse-title ">
+                <h1 className="text-secondary font-bold text-2xl">
                   {t("addNewProduct")}
                 </h1>
               </div>
@@ -26,8 +26,8 @@ const Page = () => {
             </div>
             <div className="collapse collapse-arrow  ">
               <input type="radio" name="my-accordion-2" />
-              <div className="flex flex-row justify-between text-[#ef4c53] collapse-title">
-                <h1 className="text-black font-bold text-2xl">
+              <div className="flex flex-row justify-between text-accent collapse-title">
+                <h1 className="text-secondary font-bold text-2xl">
                   {t("addNewCategory")}
                 </h1>
               </div>

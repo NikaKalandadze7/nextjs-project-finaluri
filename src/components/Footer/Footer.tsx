@@ -6,8 +6,8 @@ import { useTranslations } from "next-intl";
 const Footer = () => {
   const t = useTranslations("Footer");
   return (
-    <div className="bg-black">
-      <footer className="footer p-10 bg-black text-base-content m-auto container">
+    <div className="bg-slate-900 ">
+      <footer className="footer p-10 bg-transparent text-base-content m-auto container">
         <aside className="items-center grid-flow-col">
           <p>{t("copyright")}</p>
         </aside>

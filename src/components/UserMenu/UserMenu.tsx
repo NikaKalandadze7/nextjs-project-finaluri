@@ -23,8 +23,8 @@ const UserMenu = () => {
           tabIndex={0}
           role="button"
           className={`${
-            loggedIn ? "bg-[#ef4c53]" : "bg-black"
-          } rounded-full h-8 w-8 flex justify-center items-center`}
+            loggedIn ? "bg-[#ef4c53]" : "bg-slate-500"
+          } rounded-full h-10 w-10 flex justify-center items-center`}
         >
           <UserIcon color={"white"} height={28} width={28} />
         </div>

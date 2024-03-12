@@ -1,7 +1,7 @@
 "use client";
 
 import React, { ReactNode } from "react";
-
+import { useParams } from "next/navigation";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
@@ -22,12 +22,13 @@ const Breadcrumb = ({
 }: TBreadCrumbProps) => {
   const paths = usePathname();
   const pathNames = paths.split("/").filter((path) => path);
-
+  const { locale } = useParams();
+  const localizedPath = (path: string) => `/${locale}${path}`;
   return (
     <div className={containerClasses}>
-      <ul>
+      <ul className="text-secondary">
         <li className={listClasses}>
-          <Link href={"/"}>{homeElement}</Link>
+          <Link href={localizedPath(`/${locale}`)}>{homeElement}</Link>
         </li>
         {pathNames.length > 0}
         {pathNames.map((link, index) => {

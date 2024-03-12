@@ -66,8 +66,8 @@ const Login = () => {
           </>
         ) : (
           <>
-            <div className="text-black flex flex-col">
-              <h1 className="text-[36px] text-black">{t("loginBanner")}</h1>
+            <div className="text-secondary flex flex-col">
+              <h1 className="text-[36px] text-secondary">{t("loginBanner")}</h1>
               <span className="">{t("details")}</span>
             </div>
             <InputForm

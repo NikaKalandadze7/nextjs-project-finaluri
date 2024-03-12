@@ -22,7 +22,7 @@ const CategoryDropdown: React.FC = () => {
   }, []);
 
   return (
-    <ul className="menu max-w-52 min-w-48 w-full p-0  rounded-none text-black font-semibold ">
+    <ul className="menu max-w-52 min-w-48 w-full p-0  rounded-none text-secondary font-semibold ">
       {categoryData.map((categories) => (
         <CategoryButton name={categories.name} key={categories.id} />
       ))}

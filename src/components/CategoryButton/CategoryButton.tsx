@@ -12,7 +12,7 @@ const CategoryButton: React.FC<CategoriesInterface> = ({
   const localizedPath = (path: string) => `/${locale}${path}`;
 
   return (
-    <li className="text-black font-semibold w-full">
+    <li className="text-secondary font-semibold w-full">
       <Link
         href={{
           pathname: localizedPath("/products"),

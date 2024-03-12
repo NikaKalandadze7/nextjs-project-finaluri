@@ -39,13 +39,13 @@ const SearchBar = () => {
       <input
         type="text"
         placeholder={t("placeholder")}
-        className="text-xs h-9 bg-[#f5f5f5] py-2 px-5 rounded-sm w-full z-[9999]"
+        className="text-xs h-9 bg-stone-300 py-2 px-5 rounded-sm w-full z-[9999]"
         onChange={handleSearchChange}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
       />
       <div
-        className={`h-486 max-h-screen pt-1 bg-white border-l-[1px] border-r-[1px] border-b-[1px] border-solid border-[#c7c7c7] overflow-auto absolute top-[40px] w-[calc(100%-10px)] z-[9998] ${
+        className={`h-486 max-h-screen pt-1 bg-primary border-l-[1px] border-r-[1px] border-b-[1px] border-solid border-[#c7c7c7] overflow-auto absolute top-[40px] w-[calc(100%-10px)] z-[9998] ${
           focused && searchText.length > 0 ? "block" : "hidden"
         } `}
       >

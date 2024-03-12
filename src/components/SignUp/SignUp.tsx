@@ -66,8 +66,10 @@ const SignUp = () => {
             className="flex flex-col gap-10 w-full"
             onSubmit={(e) => e.preventDefault()}
           >
-            <div className="text-black flex flex-col">
-              <h1 className="text-[36px] text-black">{t("createAnAccount")}</h1>
+            <div className="text-secondary flex flex-col">
+              <h1 className="text-[36px] text-secondary">
+                {t("createAnAccount")}
+              </h1>
               <span>{t("details")}</span>
             </div>
             <InputForm

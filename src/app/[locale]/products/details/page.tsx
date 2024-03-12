@@ -62,7 +62,7 @@ const page = ({
   );
   return (
     <div className="container flex min-h-screen flex-col items-center m-auto ">
-      <div className="flex flex-col w-full items-center pt-20 gap-12">
+      <div className="flex flex-col w-full items-center pt-20 gap-12 text-secondary">
         <div className="flex flex-row gap-16 w-full">
           <div className="w-[50%] relative">
             <Image
@@ -74,14 +74,14 @@ const page = ({
             <div
               className={`${
                 currentProduct?.salePrice === null ? "hidden" : "absolute"
-              } bg-[#ef4c53] rounded-md md:top-2 md:left-2 xs:left-1 xs:top-1 px-3 py-1 text-white text-sm`}
+              } bg-[#ef4c53] rounded-md md:top-2 md:left-2 xs:left-1 xs:top-1 px-3 py-1 text-primary text-sm`}
             >
               -{discountPercentage}%
             </div>
           </div>
           <div className="flex flex-col gap-6 w-[50%]">
             <div className="flex flex-row justify-between">
-              <h2 className="font-semibold text-2xl text-black">
+              <h2 className="font-semibold text-2xl text-secondary">
                 {currentProduct?.title}
               </h2>
               <FavoriteButton productId={searchParams.id} />
@@ -90,13 +90,13 @@ const page = ({
               {currentProduct?.category_name}
             </span>
             <div className="flex flex-row justify-between pt-4 md:m-1 xs:m-3 ">
-              <span className="text-black font-normal text-xl">
+              <span className="text-secondary font-normal text-xl">
                 $
                 {currentProduct?.salePrice === null
                   ? currentProduct?.price
                   : currentProduct?.salePrice}
                 <span
-                  className={`line-through text-base text-black pl-1 font-light ${
+                  className={`line-through text-base text-secondary pl-1 font-light ${
                     currentProduct?.salePrice === null ? "hidden" : "inline"
                   }`}
                 >
@@ -104,7 +104,7 @@ const page = ({
                 </span>
               </span>
             </div>
-            <div className="text-black text-base border-b-[1px] border-gray-300  border-t-[1px] py-6">
+            <div className="text-secondary text-base border-b-[1px] border-gray-300  border-t-[1px] py-6">
               {currentProduct?.description}
             </div>
             <div className="flex flex-col w-[100%] gap-6 border-b-[1px] py-6 border-gray-300">
@@ -121,10 +121,10 @@ const page = ({
             <div className="flex flex-col mt-6 border-[1px] border-gray-300 w-[50%]  rounded-[1px] p-6">
               <div className="flex flex-row justify-center items-center gap-6 p-4">
                 <div className="w-10 h-10">
-                  <DeliveryIcon height={32} width={32} color="black" />
+                  <DeliveryIcon height={32} width={32} color="secondary" />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <h5 className="text-base text-black">Free Delivery</h5>
+                  <h5 className="text-base text-secondary">Free Delivery</h5>
                   <p className="text-sm underline">
                     Enter your postal code for Delivery availability
                   </p>
@@ -132,10 +132,10 @@ const page = ({
               </div>
               <div className="flex flex-row justify-center items-center gap-6 border-gray-300  border-t-[1px] p-4">
                 <div className="w-10 h-10">
-                  <ReturnIcon height={32} width={32} color="black" />
+                  <ReturnIcon height={32} width={32} color="secondary" />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <h5 className="text-base text-black">Return Delivery</h5>
+                  <h5 className="text-base text-secondary">Return Delivery</h5>
                   <p className="text-sm">Free 30 Days of Delivery Returns</p>
                 </div>
               </div>

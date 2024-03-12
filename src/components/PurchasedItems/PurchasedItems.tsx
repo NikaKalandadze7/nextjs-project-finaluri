@@ -34,23 +34,18 @@ const PurchasedItems: React.FC<PurchaseInterface> = ({
   };
 
   return (
-    <div className="card w-[calc(33%-20px)] bg-white text-black shadow-xl ">
+    <div className="card w-[calc(33%-20px)] bg-primary text-secondary shadow-xl ">
       <div className="card-body">
         <h2 className="card-title">
           {t("orderPlacedOn")} {formatDate(created_at)}
         </h2>
         <p>
           {t("totalItemsPurchased")}
-          <span className="text-[#ef4c53] font-bold text-lg">
-            {" "}
-            {totalItems}
-          </span>
+          <span className="text-accent font-bold text-lg"> {totalItems}</span>
         </p>
         <p>
           {t("totalCost")}
-          <span className="text-[#ef4c53] font-bold text-lg">
-            ${totalPrice}
-          </span>
+          <span className="text-accent font-bold text-lg">${totalPrice}</span>
         </p>
         <div className="badge badge-accent badge-outline h-full">
           {t("orderId")} {id}

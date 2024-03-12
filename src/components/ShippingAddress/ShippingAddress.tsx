@@ -4,18 +4,18 @@ import LabeledInput from "../LabeledInput/LabeledInput";
 import { countries } from "@/utils/consts";
 import MainButton from "../MainButton/MainButton";
 import PaymentForm from "../PaymentForm/PaymentForm";
-
+import { useTranslations } from "next-intl";
 const ShippingAddress = () => {
   const [address, setAddress] = useState<string>("");
   const [country, setCountry] = useState<string>("");
   const [city, setCity] = useState<string>("");
   const [zipCode, setZipCode] = useState<number | string>("");
-
+  const t = useTranslations("Checkout");
   return (
-    <div className="flex flex-col justify-center w-[50%]  gap-5">
+    <div className="flex flex-col justify-center w-[50%] gap-5">
       <div className="flex flex-row justify-between items-center gap-5">
         <LabeledInput
-          label="Shipping Address"
+          label={t("shippingAddress")}
           disabled={false}
           value={address}
           maxLength={99}
@@ -23,11 +23,12 @@ const ShippingAddress = () => {
           handleChange={(e) => setAddress(e)}
         />
         <select
-          className="select select-error w-[100%] mt-4  bg-white text-black"
+          className="select select-error w-full mt-4 bg-primary text-secondary"
           onChange={(e) => setCountry(e.target.value)}
+          defaultValue=""
         >
-          <option disabled selected>
-            Select Country
+          <option disabled value="">
+            {t("selectCountry")}
           </option>
           {countries.map((country) => (
             <option key={country}>{country}</option>
@@ -36,7 +37,7 @@ const ShippingAddress = () => {
       </div>
       <div className="flex flex-row justify-between gap-5">
         <LabeledInput
-          label="City"
+          label={t("city")}
           disabled={false}
           value={city}
           maxLength={99}
@@ -44,7 +45,7 @@ const ShippingAddress = () => {
           handleChange={(e) => setCity(e)}
         />
         <LabeledInput
-          label="Zip Code"
+          label={t("zipCode")}
           disabled={false}
           value={zipCode}
           maxLength={8}
@@ -62,7 +63,7 @@ const ShippingAddress = () => {
             : false
         }
       >
-        Payment
+        {t("payment")}
       </button>
 
       <PaymentForm />

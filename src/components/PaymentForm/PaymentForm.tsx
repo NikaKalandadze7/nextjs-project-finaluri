@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import LabeledInput from "../LabeledInput/LabeledInput";
 import { useShoppingCartStore } from "@/store";
 import { purchaseService, removeFromCartService } from "@/services";
+import { useTranslations } from "next-intl";
+
 interface Month {
   value: string;
   name: string;
@@ -19,6 +21,7 @@ const PaymentForm = () => {
   const [error, setError] = useState<boolean>(false);
   const { shoppingCart, totalItemCount, totalPrice, fetchCartItems } =
     useShoppingCartStore();
+  const t = useTranslations("Checkout");
 
   useEffect(() => {
     const currentYear = new Date().getFullYear();
@@ -59,11 +62,9 @@ const PaymentForm = () => {
       className="modal modal-bottom sm:modal-middle relative"
     >
       <div className="modal-box bg-white flex gap-6 flex-col">
-        <h3 className="font-bold text-lg">
-          Enter your Payment Information to Finalize Order
-        </h3>
+        <h3 className="font-bold text-lg">{t("enterPaymentInfo")}</h3>
         <LabeledInput
-          label="Card Number"
+          label={t("cardNumber")}
           disabled={false}
           value={cardNumber}
           maxLength={34}
@@ -71,7 +72,7 @@ const PaymentForm = () => {
           handleChange={(e) => setCardNumber(e)}
         />
         <LabeledInput
-          label="Name on Card"
+          label={t("nameOnCard")}
           disabled={false}
           value={nameOnCard}
           maxLength={99}
@@ -85,7 +86,7 @@ const PaymentForm = () => {
             onChange={(e) => setSelectedMonth(e.target.value)}
           >
             <option disabled value="">
-              Select Month
+              {t("selectMonth")}
             </option>
             {months.map((month) => (
               <option key={month.value} value={month.value}>
@@ -100,7 +101,7 @@ const PaymentForm = () => {
             onChange={(e) => setSelectedYear(e.target.value)}
           >
             <option disabled value="">
-              Select Year
+              {t("selectYear")}
             </option>
             {years.map((year) => (
               <option key={year} value={year.toString()}>
@@ -124,7 +125,7 @@ const PaymentForm = () => {
               className="btn btn-error text-white"
               onClick={() => placeOrder()}
             >
-              Place Order
+              {t("placeOrder")}
             </button>
           </form>
         </div>

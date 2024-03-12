@@ -6,7 +6,7 @@ const NotLoggedIn = () => {
   const t = useTranslations("User");
   return (
     <div>
-      <Link className="text-2xl text-black" href={"/authenticate"}>
+      <Link className="text-2xl text-secondary" href={"/authenticate"}>
         {t("notLoggedIn")}{" "}
       </Link>
     </div>

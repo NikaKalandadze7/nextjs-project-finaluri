@@ -22,9 +22,13 @@ const ShoppingCart = () => {
   const t = useTranslations("ShoppingCart");
   return (
     <div className="dropdown dropdown-end">
-      <div tabIndex={0} role="button" className="relative">
-        <ShoppingCartIcon color={"black"} height={28} width={28} />
-        <span className="absolute xl:left-4 xl:-top-2 lg:left-5 lg:-top-5 md:left-5 md:-top-2 xs:left-4 xs:-top-2 rounded-[50%] h-5 w-5 bg-[#ef4c53] text-white text-center text-xs flex justify-center items-center ">
+      <div
+        tabIndex={0}
+        role="button"
+        className="relative bg-slate-500 h-10 w-10 rounded-full flex justify-center items-center hover:bg-red-600"
+      >
+        <ShoppingCartIcon color={"white"} height={28} width={28} />
+        <span className="absolute  right-0  -top-3  rounded-[50%] h-5 w-5 bg-[#ef4c53] border-gray-300 border-b-[1px] text-white text-center text-xs flex justify-center items-center ">
           {getTotalItemCount(shoppingCart)}
         </span>
       </div>

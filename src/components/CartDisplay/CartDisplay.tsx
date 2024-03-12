@@ -30,15 +30,15 @@ const CartDisplay = () => {
         />
       ))}
       <div className="flex flex-row justify-between items-center">
-        <span className="text-xl text-black">
+        <span className="text-xl text-secondary">
           {t("itemCount")}:
           <span className="text-2xl m-2 text-red-900">{totalItemCount}</span>
         </span>
-        <span className="text-xl text-black">
+        <span className="text-xl text-secondary">
           {t("totalPrice")}:
           <span className="text-2xl m-2 text-red-900">{totalPrice}</span>
         </span>
-        <Link href={"/cart/checkout"} className="btn  btn-error  text-white">
+        <Link href={"/cart/checkout"} className="btn  btn-error  text-primary">
           {t("proceed")}
         </Link>
       </div>

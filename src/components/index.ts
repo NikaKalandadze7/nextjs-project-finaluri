@@ -46,6 +46,7 @@ export { default as FavoriteButton } from "./FavoriteButton/FavoriteButton";
 export { default as ErrorPopup } from "./ErrorPopup/ErrorPopup";
 export { default as ProductSlider } from "./ProductSlider/ProductSlider";
 export { default as ProductSliderLarge } from "./ProductSliderLarge/ProductSliderLarge";
+export { default as ThemeSwitcher } from "./ThemeSwitcher/ThemeSwitcher";
 
 export { default as BannerSlider } from "./BannerSlider/BannerSlider";
 export { default as ProductListSmall } from "./ProductListSmall/ProductListSmall";

@@ -24,7 +24,7 @@ const Logout = () => {
   };
   return (
     <div>
-      <h1 className="mb-6 text-xl text-black">{`Hello, ${userInfo?.first_name} ${userInfo?.last_name}`}</h1>
+      <h1 className="mb-6 text-xl text-secondary">{`Hello, ${userInfo?.first_name} ${userInfo?.last_name}`}</h1>
       <MainButton
         size={"w-[100%]"}
         label="Log out"

@@ -17,7 +17,8 @@
     "filterByCategory": "Filter products by Category",
     "chooseCategory": "Select Product Category",
     "resultQuantity": "Products Per Page",
-    "quantity": "Result Quantity"
+    "quantity": "Result Quantity",
+    "moreProducts": "Check out more Products"
   },
   "PurchasedItems": {
     "orderPlacedOn": "Order Placed on",
@@ -114,6 +115,30 @@
     "addProduct": "Add Product",
     "fillInAllFields": "Please fill in all Fields!",
     "unableToAddProduct": "Unable To add Product",
-    "failedToFetchCategories": "Failed to fetch categories:"
+    "failedToFetchCategories": "Failed to fetch categories:",
+    "newCategoryName": "New Category Name",
+    "addCategory": "Add Category",
+    "unableToAddCategory": "Unable To add Category"
+  },
+  "Checkout": {
+    "greeting": "Hello,",
+    "noItemsInCart": "You don't have any items in your cart, Please visit our",
+    "productsPage": "Products Page",
+    "youHave": "You have",
+    "itemsInCart": "Items in your Cart",
+    "totalPrice": "Total Price of your items: ",
+    "shippingAddressPrompt": "Please Enter your Shipping Address:",
+    "shippingAddress": "Shipping Address",
+    "selectCountry": "Select Country",
+    "city": "City",
+    "zipCode": "Zip Code",
+    "payment": "Payment",
+    "enterPaymentInfo": "Enter your Payment Information to Finalize Order",
+    "cardNumber": "Card Number",
+    "nameOnCard": "Name on Card",
+    "selectMonth": "Select Month",
+    "selectYear": "Select Year",
+    "cvv": "CVV",
+    "placeOrder": "Place Order"
   }
 }

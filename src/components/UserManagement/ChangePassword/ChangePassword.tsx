@@ -38,7 +38,7 @@ const ChangePassword = () => {
   };
   return (
     <div className="flex flex-col justify-center items-center gap-9 w-full">
-      <div className="flex flex-col items-center text-lg text-black text-center ">
+      <div className="flex flex-col items-center text-lg text-secondary text-center ">
         <h3 className="flex gap-2">
           <span>{t("welcome")}!</span>
           <span className="text-[#ef4c53] font-semibold">

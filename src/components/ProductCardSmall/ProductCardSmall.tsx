@@ -23,7 +23,7 @@ const ProductCardSmall: React.FC<ProductInterface> = ({
         pathname: localizedPath("/products/details"),
         query: { id },
       }}
-      className="rounded-md overflow-hidden   bg-white text-black z-0 min-w-[135px] w-[20%]"
+      className="rounded-md overflow-hidden   bg-primary text-secondary z-0 min-w-[135px] w-[20%]"
     >
       <div
         className="bg-cover bg-top max-h-[614px] pt-[90%] bg-[#f3eae3] relative overflow-hidden"
@@ -32,7 +32,7 @@ const ProductCardSmall: React.FC<ProductInterface> = ({
         <div
           className={`${
             salePrice === null ? "hidden" : "absolute"
-          } bg-[#ef4c53] rounded-tl-md	rounded-br-md  rounded-bottom top-0 left-0 px-3 py-1 text-white text-sm`}
+          } bg-[#ef4c53] rounded-tl-md	rounded-br-md  rounded-bottom top-0 left-0 px-3 py-1 text-primary text-sm`}
         >
           -{discountPercentage}%
         </div>
@@ -49,7 +49,7 @@ const ProductCardSmall: React.FC<ProductInterface> = ({
         <span className="text-[#ef4c53] font-semibold">
           ${salePrice === null ? price : salePrice}
           <span
-            className={`line-through text-xs text-black pl-1 font-light ${
+            className={`line-through text-xs text-secondary pl-1 font-light ${
               salePrice === null ? "hidden" : "inline"
             }`}
           >

@@ -47,12 +47,14 @@ const page = ({
       <div className="flex flex-row w-full gap-6">
         <div className="flex flex-col w-full">
           <div className="flex flex-col justify-between">
-            <h1 className="text-4xl text-black font-bold my-6">
+            <h1 className="text-4xl text-secondary font-bold my-6">
               Browse Products from the {searchParams.name} Category
             </h1>
             <div className="flex flex-row gap-6">
               <div className="flex flex-col gap-1">
-                <h6 className="text-xs text-black">Filter products by SALE</h6>
+                <h6 className="text-xs text-secondary">
+                  Filter products by SALE
+                </h6>
                 <div className="form-control flex flex-row items-center gap-1">
                   <label className="cursor-pointer label ">
                     <input
@@ -62,32 +64,34 @@ const page = ({
                       className="checkbox checkbox-error checkbox-sm"
                     />
                   </label>
-                  <span className="label-text text-black">On Sale</span>
+                  <span className="label-text text-secondary">On Sale</span>
                 </div>
               </div>
               <div className="flex flex-col gap-2">
-                <h6 className="text-xs text-black">Filter products by Price</h6>
+                <h6 className="text-xs text-secondary">
+                  Filter products by Price
+                </h6>
                 <div className="flex gap-2">
                   <input
                     type="text"
                     placeholder="Min Price"
-                    className="input input-bordered input-xs input-error w-full bg-white max-w-[80px]"
+                    className="input input-bordered input-xs input-error w-full bg-primary max-w-[80px]"
                     onChange={(e) => setMinPrice(e.target.value)}
                   />
                   <span>-</span>
                   <input
                     type="text"
                     placeholder="Max Price"
-                    className="input input-bordered input-xs input-error w-full bg-white max-w-[80px]"
+                    className="input input-bordered input-xs input-error w-full bg-primary max-w-[80px]"
                     onChange={(e) => setMaxPrice(e.target.value)}
                   />
                 </div>
               </div>
               <div className="flex flex-col gap-1">
-                <h6 className="text-xs text-black">Products Per Page</h6>
+                <h6 className="text-xs text-secondary">Products Per Page</h6>
                 <div>
                   <select
-                    className="select select-error select-xs  bg-white text-black"
+                    className="select select-error select-xs  bg-primary text-secondary"
                     onChange={(e) => setPageSize(e.target.value)}
                   >
                     <option disabled selected>
@@ -122,13 +126,13 @@ const page = ({
                 <p>No products found</p>
               )}
             </div>
-            <div className="join m-12 bg-white">
+            <div className="join m-12 bg-primary">
               {Array.from(Array(totalPages).keys()).map((pageNumber) => (
                 <button
                   key={pageNumber}
                   className={`join-item btn btn-sm ${
                     page === pageNumber + 1 ? "btn-active" : ""
-                  } bg-white`}
+                  } bg-primary`}
                   onClick={() => handlePageChange(pageNumber + 1)}
                 >
                   {pageNumber + 1}

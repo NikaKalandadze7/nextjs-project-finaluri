@@ -28,7 +28,7 @@ const ProductSliderLarge: React.FC = ({ items }) => {
     <OwlCarousel responsive={Responsive}>
       {Array.isArray(items) && items.length > 0 ? (
         items.map((product) => (
-          <div className="item bg-white" key={product.id}>
+          <div className="item bg-primary" key={product.id}>
             <ProductCardFeatured
               key={product.id}
               id={product.id}

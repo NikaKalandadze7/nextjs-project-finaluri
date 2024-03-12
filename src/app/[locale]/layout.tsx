@@ -4,6 +4,7 @@ import "./globals.css";
 import { Breadcrumb, Footer, Header } from "@Components";
 import { unstable_setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider, useMessages } from "next-intl";
+import { Providers } from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,22 +29,16 @@ export default function RootLayout({
   unstable_setRequestLocale(locale);
   const messages = useMessages();
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <body className={inter.className}>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <Header />
-          <div className="margin-auto container px-[10px]">
-            <Breadcrumb
-              homeElement={"Home"}
-              activeClasses="text-slate-700  "
-              containerClasses="text-sm breadcrumbs "
-              listClasses="hover:underline mx-2 font-bold"
-              capitalizeLinks
-            />
-          </div>
-          <main>{children}</main>
-          <Footer />
-        </NextIntlClientProvider>
+        <Providers>
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            <Header />
+
+            <main className="bg-primary">{children}</main>
+            <Footer />
+          </NextIntlClientProvider>
+        </Providers>
       </body>
     </html>
   );

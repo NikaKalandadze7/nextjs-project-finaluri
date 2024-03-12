@@ -18,7 +18,8 @@
     "filterByCategory": "გაფილტრე კატეგორიის მიხედვით",
     "chooseCategory": "აირჩიე კატეგორია",
     "resultQuantity": "პროდუქტიების რაოდენობა გვერდზე",
-    "quantity": "აირჩიე რეოდენობა"
+    "quantity": "აირჩიე რეოდენობა",
+    "moreProducts": "დაათვალიერე სხვა პროდუქტები"
   },
   "PurchasedItems": {
     "orderPlacedOn": "შეკვეთა განხორციელდა:",
@@ -113,6 +114,30 @@
     "addProduct": "დაამატე პროდუქტი",
     "fillInAllFields": "გთხოვთ შეავსოთ ყველა ველი!",
     "unableToAddProduct": "პროდუქტი ვერ დაემატა",
-    "failedToFetchCategories": "კატეგორიების წამოღება ვერ მოხერხდა:"
+    "failedToFetchCategories": "კატეგორიების წამოღება ვერ მოხერხდა:",
+    "newCategoryName": "ახალი კატეგორიის სახელი",
+    "addCategory": "დაამატე კატეგორია",
+    "unableToAddCategory": "კატეგორიების დამატება ვერ მოხერხდა"
+  },
+  "Checkout": {
+    "greeting": "გამარჯობა,",
+    "noItemsInCart": "თქვენ არ გაქვთ პროდუქტი კალათაში გთხოვთ ეწვიოთ ჩვენს",
+    "productsPage": "პროდუქტების გვერდს",
+    "youHave": "თქვენ გაქვთ",
+    "itemsInCart": "ნივთი კალათაში",
+    "totalPrice": "თქვენი არჩეული ნივთების ჯამური ფასია:",
+    "shippingAddressPrompt": "გთხოვთ შეიყვანოთ თქვენი მიწოდების მისამართი:",
+    "shippingAddress": "მისამართი",
+    "selectCountry": "აირჩიეთ ქვეყანა",
+    "city": "ქალაქი",
+    "zipCode": "საფოსტო ინდექსი",
+    "payment": "გადახდა",
+    "enterPaymentInfo": "შეკვეთის დასასრულებლად შეიყვანეთ თქვენი ბარათის ინფორმაცია",
+    "cardNumber": "ბარათის ნომერი",
+    "nameOnCard": "სახელი და გვარი",
+    "selectMonth": "აირჩიე თვე",
+    "selectYear": "აირჩიე წელი",
+    "cvv": "CVV",
+    "placeOrder": "შეკვეთა"
   }
 }

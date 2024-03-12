@@ -21,7 +21,7 @@ const ProductCardFeatured: React.FC<ProductInterface> = ({
 
   return (
     <div
-      className="min-w-[135px] w-[10% max-w-[267px] rounded-[2px] max-h-[340px]   overflow-hidden   ease-in-out duration-300 hover:scale-[1.02] bg-white text-black z-0"
+      className="min-w-[135px] w-[10% max-w-[267px] rounded-[2px] max-h-[340px]   overflow-hidden   ease-in-out duration-300 hover:scale-[1.02] bg-sprimary text-secondary z-0"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -32,7 +32,7 @@ const ProductCardFeatured: React.FC<ProductInterface> = ({
         <div
           className={`${
             salePrice === null ? "hidden" : "absolute"
-          } bg-[#ef4c53] rounded-md md:top-2 md:left-5 xs:left-1 xs:top-1 px-3 py-1 text-white text-sm`}
+          } bg-[#ef4c53] rounded-md md:top-2 md:left-5 xs:left-1 xs:top-1 px-3 py-1 text-sprimary text-sm`}
         >
           -{discountPercentage}%
         </div>
@@ -59,7 +59,7 @@ const ProductCardFeatured: React.FC<ProductInterface> = ({
         <span className="text-[#ef4c53] font-semibold">
           ${salePrice === null ? price : salePrice}
           <span
-            className={`line-through text-xs text-black pl-1 font-light ${
+            className={`line-through text-xs text-secondary pl-1 font-light ${
               salePrice === null ? "hidden" : "inline"
             }`}
           >

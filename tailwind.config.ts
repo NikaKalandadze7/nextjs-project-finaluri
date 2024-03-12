@@ -35,6 +35,56 @@ const config = {
     },
   },
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: [
+      {
+        luxury: {
+          ...require("daisyui/src/theming/themes")["luxury"],
+          "base-grey": "blue",
+        },
+      },
+
+      {
+        dark: {
+          ...require("daisyui/src/theming/themes")["[data-theme=light]"],
+          primary: "black",
+          "primary-focus": "mediumblue",
+          secondary: "white",
+          tretiary: "#f5f5f527",
+          accent: "#ef4c53",
+          announcement: "#1e293b",
+          "base-grey": "#ffffff",
+        },
+      },
+    ],
+  },
+
+  // daisyui: {
+  //   themes: [
+  //     {
+  //       light: {
+  //         ...require("daisyui/src/theming/themes")["[data-theme=light]"],
+  //         primary: "white",
+  //         "primary-focus": "mediumblue",
+  //         secondary: "black",
+  //         tretiary: "#f5f5f5",
+  //         accent: "#ef4c53",
+  //         announcement: "#1e293b",
+  //       },
+  //     },
+  //     {
+  //       dark: {
+  //         ...require("daisyui/src/theming/themes")["[data-theme=light]"],
+  //         primary: "black",
+  //         "primary-focus": "mediumblue",
+  //         secondary: "white",
+  //         tretiary: "#f5f5f527",
+  //         accent: "#ef4c53",
+  //         announcement: "#1e293b",
+  //       },
+  //     },
+  //   ],
+  // },
 } satisfies Config;
 
 export default config;

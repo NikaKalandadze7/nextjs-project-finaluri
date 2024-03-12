@@ -4,12 +4,15 @@ import MainButton from "../MainButton/MainButton";
 import ErrorPopup from "../ErrorPopup/ErrorPopup";
 import { addCategoryService } from "@/services";
 import React, { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 
 const AddCategory = () => {
   const [errorOpen, setErrorOpen] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [newCategory, setNewCategory] = useState<string>("");
   const [newCategoryImage, setNewCategoryImage] = useState<string>("");
+  const t = useTranslations("AddProductsAndCategories");
+
   const handleErrorClose = () => {
     setErrorOpen(false);
   };
@@ -23,9 +26,9 @@ const AddCategory = () => {
       console.log(response);
     } catch (error) {
       if (!newCategory || !newCategoryImage) {
-        setErrorMessage("Please fill in all Fields!");
+        setErrorMessage(t("fillInAllFields"));
       } else {
-        setErrorMessage("Unable To add Category");
+        setErrorMessage(t("unableToAddCategory"));
       }
       setErrorOpen(true);
     }
@@ -33,7 +36,7 @@ const AddCategory = () => {
   return (
     <div className="flex flex-col gap-5">
       <LabeledInput
-        label="New Category Name"
+        label={t("newCategoryName")}
         type="text"
         value={newCategory}
         maxLength={99}
@@ -42,7 +45,7 @@ const AddCategory = () => {
       />
       <input
         type="file"
-        className="file-input file-input-bordered file-input-error  w-full  bg-white text-black"
+        className="file-input file-input-bordered file-input-error  w-full  bg-primary text-secondary"
         onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
           const file = e.target.files?.[0];
           if (file) {
@@ -59,9 +62,9 @@ const AddCategory = () => {
         }}
       />
       <MainButton
-        size={"w-full"}
-        buttonAction={() => addCategory()}
-        label={"Add Category"}
+        size="w-full"
+        buttonAction={addCategory}
+        label={t("addCategory")}
       />
       <div className={` ${errorOpen ? "block" : "hidden"} `}>
         <ErrorPopup

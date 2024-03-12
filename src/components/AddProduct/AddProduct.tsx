@@ -84,7 +84,7 @@ const AddProduct = () => {
       />
       <div className="flex flex-row justify-between gap-5">
         <select
-          className="select select-error w-[50%]   bg-white text-black"
+          className="select select-error w-[50%]   bg-primary text-secondary"
           onChange={(e) => setCategory(e.target.value)}
         >
           <option disabled selected>
@@ -96,7 +96,7 @@ const AddProduct = () => {
         </select>
         <input
           type="file"
-          className="file-input file-input-bordered file-input-error  w-[50%]  bg-white text-black"
+          className="file-input file-input-bordered file-input-error  w-[50%]  bg-primary text-secondary"
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             const file = e.target.files?.[0];
             if (file) {
@@ -121,7 +121,7 @@ const AddProduct = () => {
               onChange={(e) => setOnSale(e.target.checked)}
               className="checkbox checkbox-error"
             />
-            <span className="label-text text-black">{t("onSale")}</span>
+            <span className="label-text text-secondary">{t("onSale")}</span>
           </label>
         </div>
         <div className={`w-full ${onSale ? "no-underline" : "line-through "}`}>
