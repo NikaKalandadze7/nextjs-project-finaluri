@@ -57,7 +57,7 @@ const SignUp = () => {
   };
 
   return (
-    <div>
+    <div className="rounded-md zero:bg-primary md:bg-none zero:p-6 lg:p-0 ">
       {loggedIn ? (
         <Logout />
       ) : (

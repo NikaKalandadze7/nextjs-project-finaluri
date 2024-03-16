@@ -3,10 +3,10 @@ import { Login } from "@/components";
 const page = () => {
   const sideImageUrl = "/sideImage.png";
   return (
-    <div className="min-h-screen mt-9">
+    <div className="min-h-screen pt-9  ">
       <div className="h-[85vh]">
         <div
-          className="bg-no-repeat bg-cover h-[100%] w-[900px]"
+          className="bg-no-repeat bg-cover h-[100%] sm:w-[400px] md:w-[600px] lg:w-[900px]"
           style={{ backgroundImage: `url(${sideImageUrl})` }}
         ></div>
       </div>

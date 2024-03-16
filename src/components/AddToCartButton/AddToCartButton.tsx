@@ -23,7 +23,7 @@ const AddToCartButton: React.FC<AddToCartButtonProps> = ({ isHovered, id }) => {
   };
   return (
     <button
-      className={`hover:bg-gray-700 w-full text-base bg-secondary text-primary h-10 absolute transition-all duration-300 ${
+      className={`hover:bg-gray-700 w-full text-base bg-secondary text-primary zero:h-15 lg:h-10 absolute transition-all duration-300 ${
         isHovered ? "bottom-0" : "-bottom-10"
       }`}
       onClick={() => addToCart(id)}

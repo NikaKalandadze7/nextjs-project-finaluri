@@ -93,12 +93,12 @@ const UserManagement = () => {
           </p>
         </Link>
       </div>
-      <div className="p-12 shadow-lg rounded-lg flex flex-row gap-12 flex-wrap w-[50%]">
+      <div className="p-12 shadow-lg rounded-lg flex flex-row gap-12 flex-wrap zero:w-full lg:w-[50%]">
         <form
-          className="flex flex-row w-full flex-wrap gap-4 items-center justify-between"
+          className="flex zero:flex-col xl:flex-row w-full flex-wrap gap-4 items-center justify-between"
           autoComplete="new-password"
         >
-          <div className="flex flex-row gap-4 w-[calc(50%-16px)] items-between ">
+          <div className="flex zero:flex-col sm:flex-row gap-4 zero: w-full xl:w-[calc(50%-16px)] items-center">
             <LabeledInput
               label={t("firstName")}
               type="text"
@@ -115,7 +115,7 @@ const UserManagement = () => {
               {t("edit")}
             </button>
           </div>
-          <div className="flex flex-row gap-4 w-[calc(50%-16px)] items-center ">
+          <div className="flex zero:flex-col sm:flex-row gap-4 zero: w-full xl:w-[calc(50%-16px)] items-center">
             <LabeledInput
               label={t("lastName")}
               type="text"
@@ -132,7 +132,7 @@ const UserManagement = () => {
               {t("edit")}
             </button>
           </div>
-          <div className="flex flex-row gap-4 w-[calc(50%-16px)] items-center ">
+          <div className="flex zero:flex-col sm:flex-row gap-4 zero: w-full xl:w-[calc(50%-16px)] items-center ">
             <LabeledInput
               label={t("email")}
               type="email"
@@ -149,7 +149,7 @@ const UserManagement = () => {
               {t("edit")}
             </button>
           </div>
-          <div className="flex flex-row gap-4 w-[calc(50%-16px)] items-center ">
+          <div className="flex zero:flex-col sm:flex-row gap-4 zero: w-full xl:w-[calc(50%-16px)] items-center ">
             <LabeledInput
               label={t("phoneNumber")}
               type="text"

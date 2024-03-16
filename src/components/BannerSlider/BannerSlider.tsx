@@ -31,7 +31,7 @@ const BannerSlider: React.FC = () => {
       <div className=" item w-full">
         <Image
           alt="banner"
-          sizes="(max-width: 1200px) 70vw, (max-width: 1200px) 70vw, 70vw"
+          sizes="(max-width: 1400px) 100vw, (max-width: 1400px) 100vw, 100vw"
           src={iphoneBanner}
           className="w-full"
         />
@@ -39,7 +39,7 @@ const BannerSlider: React.FC = () => {
       <div className=" item w-full">
         <Image
           alt="banner"
-          sizes="(max-width: 1200px) 70vw, (max-width: 1200px) 70vw, 70vw"
+          sizes="(max-width: 1400px) 100vw, (max-width: 1400px) 100vw, 100vw"
           src={iphoneBanner}
           className="w-full"
         />
@@ -47,7 +47,7 @@ const BannerSlider: React.FC = () => {
       <div className=" item w-full">
         <Image
           alt="banner"
-          sizes="(max-width: 1200px) 70vw, (max-width: 1200px) 70vw, 70vw"
+          sizes="(max-width: 1400px) 100vw, (max-width: 1400px) 100vw, 100vw"
           src={iphoneBanner}
           className="w-full"
         />
@@ -55,7 +55,7 @@ const BannerSlider: React.FC = () => {
       <div className=" item w-full">
         <Image
           alt="banner"
-          sizes="(max-width: 1200px) 70vw, (max-width: 1200px) 70vw, 70vw"
+          sizes="(max-width: 1200px) 100vw, (max-width: 1200px) 100vw, 100vw"
           src={iphoneBanner}
           className="w-full"
         />

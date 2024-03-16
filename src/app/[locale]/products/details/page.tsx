@@ -63,8 +63,8 @@ const page = ({
   return (
     <div className="container flex min-h-screen flex-col items-center m-auto ">
       <div className="flex flex-col w-full items-center pt-20 gap-12 text-secondary">
-        <div className="flex flex-row gap-16 w-full">
-          <div className="w-[50%] relative">
+        <div className="flex zero:flex-col md:flex-row gap-16 w-full">
+          <div className="zero:w-full md:w-[50%] relative">
             <Image
               height={700}
               width={700}
@@ -79,7 +79,7 @@ const page = ({
               -{discountPercentage}%
             </div>
           </div>
-          <div className="flex flex-col gap-6 w-[50%]">
+          <div className="flex flex-col gap-6 zero:w-full md:w-[50%]">
             <div className="flex flex-row justify-between">
               <h2 className="font-semibold text-2xl text-secondary">
                 {currentProduct?.title}
@@ -118,7 +118,7 @@ const page = ({
                 Buy Now
               </Link>
             </div>
-            <div className="flex flex-col mt-6 border-[1px] border-gray-300 w-[50%]  rounded-[1px] p-6">
+            <div className="flex flex-col mt-6 border-[1px] border-gray-300 zero:w-full xl:w-[50%]  rounded-[1px] p-6">
               <div className="flex flex-row justify-center items-center gap-6 p-4">
                 <div className="w-10 h-10">
                   <DeliveryIcon height={32} width={32} color="secondary" />

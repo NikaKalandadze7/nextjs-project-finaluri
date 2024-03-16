@@ -6,6 +6,7 @@ import {
   SearchBar,
   ThemeSwitcher,
   UserArea,
+  WebsiteLogo,
 } from "@Components";
 import { useTranslations } from "next-intl";
 
@@ -15,25 +16,29 @@ const Header = () => {
   return (
     <div className="bg-primary">
       <div className=" border-gray-300 border-b-[1px]  ">
-        <div className="bg-base-100 text-primary flex justify-center items-center h-12">
-          <div className="flex flex-row items-center gap-2">
+        <div className="bg-secondary text-primary   justify-center items-center h-12  zero:hidden md:flex">
+          <div className="flex flex-row items-center gap-2 ">
             <h4 className="text-sm font-light ">{t("announcement")}</h4>
             <Link className="font-semibold underline" href={"/products"}>
               {t("shop")}
             </Link>
           </div>
-          <ThemeSwitcher />
         </div>
-        <header className="container mx-auto p-4 flex flex-col mt-6">
+        <header className="container mx-auto p-4 flex flex-col md:mt-6  gap-8">
           <div className="flex justify-between items-center h-10">
-            <h1 className="text-2xl text-secondary font-extrabold drop-shadow-xl">
-              <Link href={"/"}>Exclusive</Link>
-            </h1>
-            <MainNavigation />
+            <WebsiteLogo />
+            <div className="zero:hidden md:block">
+              <MainNavigation />
+            </div>
             <SearchBar />
-            <div className="flex gap-2">
+            <ThemeSwitcher />
+            <div className="md:flex gap-2 zero:hidden">
               <UserArea />
             </div>
+          </div>
+          <div className="zero:flex justify-between items-center md:hidden">
+            <MainNavigation />
+            <UserArea />
           </div>
         </header>
       </div>

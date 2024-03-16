@@ -12,7 +12,7 @@ const Page = () => {
     <div className="container flex min-h-screen flex-col items-center m-auto ">
       <div className="flex flex-col w-full items-center pt-20">
         {loggedIn ? (
-          <div className="flex flex-col gap-5 w-[50%] ">
+          <div className="flex flex-col gap-5 zero:w-full lg:w-[50%] ">
             <div className="collapse collapse-arrow">
               <input type="radio" name="my-accordion-2" defaultChecked />
               <div className="flex flex-row justify-between text-accent collapse-title ">

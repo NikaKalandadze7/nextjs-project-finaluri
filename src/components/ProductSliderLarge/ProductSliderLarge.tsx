@@ -10,7 +10,12 @@ const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
 
 const Responsive = {
   0: {
-    items: 3,
+    items: 2,
+    nav: true,
+  },
+
+  320: {
+    items: 2,
     nav: true,
   },
   600: {

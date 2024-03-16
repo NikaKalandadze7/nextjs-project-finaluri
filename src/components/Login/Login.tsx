@@ -57,7 +57,7 @@ const Login = () => {
   return (
     <div>
       <form
-        className="flex flex-col gap-10 w-full"
+        className="flex flex-col gap-10 w-full rounded-md zero:bg-primary md:bg-none zero:p-6 lg:p-0 "
         onSubmit={(e) => e.preventDefault()}
       >
         {loggedIn ? (
@@ -66,8 +66,10 @@ const Login = () => {
           </>
         ) : (
           <>
-            <div className="text-secondary flex flex-col">
-              <h1 className="text-[36px] text-secondary">{t("loginBanner")}</h1>
+            <div className="text-secondary flex flex-col ">
+              <h1 className="md:text-[36px] zero:text-2xl text-secondary">
+                {t("loginBanner")}
+              </h1>
               <span className="">{t("details")}</span>
             </div>
             <InputForm

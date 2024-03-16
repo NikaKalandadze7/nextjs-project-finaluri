@@ -18,7 +18,7 @@ const ProductInWishlist: React.FC<ProductInterface> = ({
   const { locale } = useParams();
   const localizedPath = (path: string) => `/${locale}${path}`;
   return (
-    <div className="w-[calc(25%-20px)] rounded-md bg-primary text-secondary z-0">
+    <div className="zero:w-[calc(50%-20px)] md:w-[calc(33%-20px)] lg:w-[calc(25%-20px)] rounded-md bg-primary text-secondary z-0">
       <div
         className="bg-cover bg-top max-h-[614px] pt-[90%] bg-[#f3eae3] relative overflow-hidden"
         style={{ backgroundImage: `url(${image})` }}
@@ -26,7 +26,7 @@ const ProductInWishlist: React.FC<ProductInterface> = ({
         <div
           className={`${
             salePrice === null ? "hidden" : "absolute"
-          } bg-[#ef4c53] rounded-tl-md	rounded-br-md  top-0  left-0   px-3 py-1 text-primary text-base`}
+          } bg-[#ef4c53] rounded-tl-md	rounded-br-md  top-0  left-0   px-3 py-1 text-primary zero:text-xs lg:text-base`}
         >
           Product on sale!
           <span className="font-bold text-lg">-{discountPercentage}%</span>

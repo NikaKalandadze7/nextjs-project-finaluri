@@ -34,7 +34,7 @@ const PurchasedItems: React.FC<PurchaseInterface> = ({
   };
 
   return (
-    <div className="card w-[calc(33%-20px)] bg-primary text-secondary shadow-xl ">
+    <div className="card zero:w-full md:w-[calc(50%-40px)] lg:max-w-[calc(33%-20px)] lg:w-[calc(33%-20px)] bg-primary text-secondary shadow-xl ">
       <div className="card-body">
         <h2 className="card-title">
           {t("orderPlacedOn")} {formatDate(created_at)}

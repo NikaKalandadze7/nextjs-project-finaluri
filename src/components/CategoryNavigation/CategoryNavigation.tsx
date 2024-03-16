@@ -22,7 +22,7 @@ const CategoryNavigation: React.FC = () => {
   }, []);
 
   return (
-    <ul className="menu bg-transparent max-w-52 min-w-48 w-full p-0  rounded-none text-secondary font-semibold border-gray-300 border-r-[1px] pt-10 ">
+    <ul className="menu bg-transparent max-w-52 min-w-48 w-full p-0  rounded-none text-secondary font-semibold border-gray-300 border-r-[1px] pt-10 zero:hidden xl:block">
       {categoryData.map((categories) => (
         <CategoryButton name={categories.name} key={categories.id} />
       ))}

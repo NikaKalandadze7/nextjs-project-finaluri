@@ -53,7 +53,7 @@ const ChangePassword = () => {
           {t("updatePersonalInfoLink")}
         </Link>
       </div>
-      <div className="p-12 shadow-lg rounded-lg flex flex-row gap-12 flex-wrap w-[50%]">
+      <div className="p-12 shadow-lg rounded-lg flex flex-row gap-12 flex-wrap zero:w-full lg:w-[50%]">
         <form
           className="flex flex-row w-full flex-wrap gap-4 items-center justify-between "
           autoComplete="new-password"

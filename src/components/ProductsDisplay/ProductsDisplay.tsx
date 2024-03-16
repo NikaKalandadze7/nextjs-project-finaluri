@@ -56,7 +56,7 @@ const FeaturedProducts = () => {
         <h1 className="text-4xl text-secondary font-bold my-6">
           {t("browse")}{" "}
         </h1>
-        <div className="flex flex-row gap-6">
+        <div className="flex zero:flex-col md:flex-row gap-6">
           <div className="flex flex-col gap-1">
             <h6 className="text-xs text-secondary">{t("filterBySale")} </h6>
             <div className="form-control flex flex-row items-center gap-1">
