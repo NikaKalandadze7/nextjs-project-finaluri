@@ -32,7 +32,7 @@ const ProductCardSmall: React.FC<ProductInterface> = ({
         <div
           className={`${
             salePrice === null ? "hidden" : "absolute"
-          } bg-[#ef4c53] rounded-tl-md	rounded-br-md  rounded-bottom top-0 left-0 px-3 py-1 text-primary text-sm`}
+          } bg-[#ef4c53] rounded-tl-md	rounded-br-md  rounded-bottom top-0 left-0 px-3 py-1 text-white text-sm`}
         >
           -{discountPercentage}%
         </div>

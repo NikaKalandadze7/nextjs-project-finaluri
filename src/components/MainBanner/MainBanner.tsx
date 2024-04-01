@@ -5,7 +5,7 @@ import BannerSlider from "../BannerSlider/BannerSlider";
 
 const MainBanner = () => {
   return (
-    <div className="relative mt-10 ml-[45px] overflow-hidden w-full">
+    <div className="relative mt-10 zero:ml-[0px] lg:ml-[45px] overflow-hidden w-full">
       <BannerSlider />
     </div>
   );

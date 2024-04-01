@@ -32,7 +32,7 @@ const ProductCardFeatured: React.FC<ProductInterface> = ({
         <div
           className={`${
             salePrice === null ? "hidden" : "absolute"
-          } bg-[#ef4c53] rounded-md md:top-2 md:left-5 xs:left-1 xs:top-1 px-3 py-1 text-sprimary text-sm`}
+          } bg-[#ef4c53] rounded-md md:top-2 md:left-5 xs:left-1 xs:top-1 px-3 py-1 text-white text-sm`}
         >
           -{discountPercentage}%
         </div>

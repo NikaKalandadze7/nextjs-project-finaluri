@@ -1,5 +1,4 @@
 "use client";
-
 import React, { ReactNode } from "react";
 import { useParams } from "next/navigation";
 import { usePathname } from "next/navigation";
@@ -21,29 +20,32 @@ const Breadcrumb = ({
   capitalizeLinks,
 }: TBreadCrumbProps) => {
   const paths = usePathname();
-  const pathNames = paths.split("/").filter((path) => path);
+  const pathNames = paths
+    .split("/")
+    .filter((path) => path)
+    .slice(1);
   const { locale } = useParams();
-  const localizedPath = (path: string) => `/${locale}${path}`;
+
   return (
     <div className={containerClasses}>
       <ul className="text-secondary">
         <li className={listClasses}>
-          <Link href={localizedPath(`/${locale}`)}>{homeElement}</Link>
+          <Link href={`/${locale}`}>{homeElement}</Link>
         </li>
-        {pathNames.length > 0}
         {pathNames.map((link, index) => {
-          let href = `/${pathNames.slice(0, index + 1).join("/")}`;
+          let href = `/${locale}/${pathNames.slice(0, index + 1).join("/")}`;
           let itemClasses =
-            paths === href ? `${listClasses} ${activeClasses}` : listClasses;
+            paths === `/${locale}${href}`
+              ? `${listClasses} ${activeClasses}`
+              : listClasses;
           let itemLink = capitalizeLinks
-            ? link[0].toUpperCase() + link.slice(1, link.length)
+            ? link[0].toUpperCase() + link.slice(1)
             : link;
           return (
             <React.Fragment key={index}>
               <li className={itemClasses}>
                 <Link href={href}>{itemLink}</Link>
               </li>
-              {pathNames.length !== index + 1}
             </React.Fragment>
           );
         })}

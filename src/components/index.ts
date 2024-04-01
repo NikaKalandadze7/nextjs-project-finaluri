@@ -12,6 +12,8 @@ export { default as NotLoggedIn } from "./NotLoggedIn/NotLoggedIn";
 export { default as UserArea } from "./UserArea/UserArea";
 export { default as UserMenu } from "./UserMenu/UserMenu";
 export { default as ShoppingCart } from "./ShoppingCart/ShoppingCart";
+export { default as ShoppingCartButton } from "./ShoppingCart/ShoppingCartButton/ShoppingCartButton";
+
 export { default as InputForm } from "./InputForm/InputForm";
 export { default as LabeledInput } from "./LabeledInput/LabeledInput";
 export { default as FeaturedProducts } from "./FeaturedProducts/FeaturedProducts";

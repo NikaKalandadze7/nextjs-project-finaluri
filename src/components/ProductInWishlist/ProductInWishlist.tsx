@@ -26,7 +26,7 @@ const ProductInWishlist: React.FC<ProductInterface> = ({
         <div
           className={`${
             salePrice === null ? "hidden" : "absolute"
-          } bg-[#ef4c53] rounded-tl-md	rounded-br-md  top-0  left-0   px-3 py-1 text-primary zero:text-xs lg:text-base`}
+          } bg-[#ef4c53] rounded-tl-md	rounded-br-md  top-0  left-0   px-3 py-1 text-white zero:text-xs lg:text-base`}
         >
           Product on sale!
           <span className="font-bold text-lg">-{discountPercentage}%</span>

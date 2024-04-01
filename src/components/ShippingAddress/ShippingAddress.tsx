@@ -12,8 +12,8 @@ const ShippingAddress = () => {
   const [zipCode, setZipCode] = useState<number | string>("");
   const t = useTranslations("Checkout");
   return (
-    <div className="flex flex-col justify-center w-[50%] gap-5">
-      <div className="flex flex-row justify-between items-center gap-5">
+    <div className="flex flex-col justify-center zero:w-full lg:w-[50%] gap-5">
+      <div className="flex zero:flex-col md:flex-row justify-between items-center gap-5">
         <LabeledInput
           label={t("shippingAddress")}
           disabled={false}
@@ -35,7 +35,7 @@ const ShippingAddress = () => {
           ))}
         </select>
       </div>
-      <div className="flex flex-row justify-between gap-5">
+      <div className="flex zero:flex-col md:flex-row justify-between gap-5">
         <LabeledInput
           label={t("city")}
           disabled={false}

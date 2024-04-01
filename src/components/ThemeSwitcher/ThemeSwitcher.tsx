@@ -1,15 +1,34 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-
-const ThemeSwitcher = () => {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "light");
-  const htmlRef = useRef(document.documentElement);
+const useSafeLocalStorage = (key, initialValue) => {
+  const [storedValue, setStoredValue] = useState(() => {
+    if (typeof window === "undefined") {
+      return initialValue;
+    }
+    const item = window.localStorage.getItem(key);
+    return item ? item : initialValue;
+  });
 
   useEffect(() => {
-    localStorage.setItem("theme", theme!);
-    const localTheme = localStorage.getItem("theme");
-    htmlRef.current.setAttribute("data-theme", localTheme!);
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem(key, storedValue);
+    }
+  }, [key, storedValue]);
+
+  return [storedValue, setStoredValue];
+};
+
+const ThemeSwitcher = () => {
+  const [theme, setTheme] = useSafeLocalStorage("theme", "light");
+
+  useEffect(() => {
+    const localTheme = localStorage.getItem("theme") ?? "light";
+    document.documentElement.setAttribute("data-theme", localTheme);
+    setTheme(localTheme);
+
+    // Save to localStorage on theme change
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   const handleToggle = (e: any) => {
@@ -27,9 +46,10 @@ const ThemeSwitcher = () => {
           type="checkbox"
           onChange={handleToggle}
           className="theme-controller"
+          checked={theme === "light"}
         />
         <svg
-          className="swap-off fill-current w-10 h-10"
+          className={`swap-off fill-current w-10 h-10`}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
